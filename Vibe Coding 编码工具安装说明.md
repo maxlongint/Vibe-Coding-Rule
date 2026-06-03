@@ -81,15 +81,15 @@ codegraph --version
 在新项目中使用 codegraph 前，需要先对项目代码建立索引，生成依赖关系图：
 
 ```powershell
-# 在项目根目录执行索引
-codegraph index .
+# 在项目根目录初始化索引
+codegraph init
 
 # 如果项目较大，可以指定代码目录
-codegraph index ./src
+codegraph init ./src
 ```
 
-索引完成后，就可以用 `codegraph query` 和 `codegraph impact` 进行代码搜索和影响分析。
-如果项目代码发生变化（新增文件、重构等），需要重新执行 `codegraph index .` 来更新索引。
+初始化完成后，就可以用 `codegraph query` 和 `codegraph impact` 进行代码搜索和影响分析。
+如果项目代码发生变化（新增文件、重构等），需要重新执行 `codegraph init` 来更新索引。
 
 ---
 
