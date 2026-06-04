@@ -1,4 +1,0 @@
-interface:
-  display_name: "SSO Requirement Workflow"
-  short_description: "Guide SSO requirements with OpenSpec and CodeGraph"
-  default_prompt: "Use $sso-requirement-workflow to plan and execute an SSO login requirement with OpenSpec, CodeGraph, and Superpowers."
