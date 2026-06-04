@@ -1,4 +1,0 @@
-interface:
-  display_name: "Update Requirement Docs"
-  short_description: "显式调用时，用于更新已有需求文档和 OpenSpec 变更记录。"
-  default_prompt: "请使用 $update-requirement-docs 更新一个已有需求文档，先定位记录载体，再保留变化记录并同步当前有效口径。"
