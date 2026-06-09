@@ -61,8 +61,8 @@
 7. Superpowers（推荐）：按当前 AI 工具官方说明安装
 三者缺一时按 AGENTS.md 自洽规则 fallback；若用户明确只要 Minimal/Standard 或暂不装某工具，经确认后跳过。
 
-若某文件已存在，先 diff 并说明合并策略；Node 命令前检查 .node-version。
-各步写入或执行前申请权限。
+【通用约束】若目标路径已存在同名文件，先 diff 并说明合并策略，经我确认后再写入；各步写入或执行前申请权限。
+【OpenSpec 步骤】执行 npm/npx 前，若项目存在 .node-version，按 AGENTS.md 切换 Node 版本。
 全部完成后列出：已复制文件、已初始化目录、验证命令结果，以及是否需要重启 AI 工具。
 ```
 
