@@ -3,9 +3,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![GitHub](https://img.shields.io/badge/GitHub-maxlongint%2FVibe--Coding--Rule-blue?logo=github)](https://github.com/maxlongint/Vibe-Coding-Rule)
 
-> **EN:** Tool-agnostic AI collaboration rules for frontend, backend, and full-stack projects. Copy [`AGENTS.md`](./AGENTS.md) to your repo root — no OpenSpec, CodeGraph, or Superpowers required.
+> **EN:** AI collaboration rules for frontend, backend, and full-stack projects. [`AGENTS.md`](./AGENTS.md) works standalone; **recommended:** AGENTS.md + OpenSpec (primary) + CodeGraph + Superpowers (auxiliary).
 
-面向 AI 辅助开发的通用协作规则包：跨项目、前后端通用、工具无关。**仅复制 [`AGENTS.md`](./AGENTS.md) 即可独立使用**，不依赖 OpenSpec、CodeGraph、Superpowers 或任何特定 AI 插件。
+面向 AI 辅助开发的通用协作规则包：跨项目、前后端通用。
+
+- **可独立使用：** 仅复制 [`AGENTS.md`](./AGENTS.md) 即可（Minimal 档位），不依赖 OpenSpec、CodeGraph、Superpowers 或任何特定 AI 插件。
+- **推荐组合：** **Full 档位** — `AGENTS.md` + 三个可选工具一起用：**OpenSpec 管需求与验收（主）**，CodeGraph 管影响分析，**Superpowers 管执行纪律（辅）**。未安装的工具按 AGENTS.md 自洽规则 fallback。
 
 仓库：<https://github.com/maxlongint/Vibe-Coding-Rule> · 协议：[MIT](./LICENSE) · 贡献：[CONTRIBUTING.md](./CONTRIBUTING.md)
 
@@ -52,18 +55,18 @@
 3. 复制 .agents/skills/ 到项目 .agents/skills/
 4. 复制 .github/pull_request_template.md 到项目 .github/
 
-【可选工具（在当前业务项目内按需安装，不必全部安装）】
-5. （可选）OpenSpec：npm install -D @fission-ai/openspec@latest，再 npx openspec init
-6. （可选）CodeGraph：项目级 MCP（local），codegraph init -i
-7. （可选）Superpowers：按当前 AI 工具官方说明安装
-未安装的工具按 AGENTS.md 自洽规则 fallback；安装前向用户确认是否需要。
+【推荐工具（在当前业务项目内安装；OpenSpec 为主、Superpowers 为辅）】
+5. OpenSpec（推荐）：npm install -D @fission-ai/openspec@latest，再 npx openspec init
+6. CodeGraph（推荐）：项目级 MCP（local），codegraph init -i
+7. Superpowers（推荐）：按当前 AI 工具官方说明安装
+三者缺一时按 AGENTS.md 自洽规则 fallback；若用户明确只要 Minimal/Standard 或暂不装某工具，经确认后跳过。
 
 若某文件已存在，先 diff 并说明合并策略；Node 命令前检查 .node-version。
 各步写入或执行前申请权限。
 全部完成后列出：已复制文件、已初始化目录、验证命令结果，以及是否需要重启 AI 工具。
 ```
 
-可选工具安装细节、跨目录安装与其它提示词见 [docs/安装与AI提示词.md](./docs/安装与AI提示词.md)。
+推荐工具安装细节、跨目录安装与其它提示词见 [docs/安装与AI提示词.md](./docs/安装与AI提示词.md)。
 
 ## 这是什么
 
@@ -81,9 +84,11 @@
 
 | 档位 | 复制内容 | 适用 |
 | --- | --- | --- |
-| **Minimal** | `AGENTS.md` | 个人、小项目、快速试点 |
-| **Standard** | Minimal + [需求治理与文档结构.md](./docs/规范/需求治理与文档结构.md) + PR 模板（推荐） | 团队默认推荐 |
-| **Full** | Standard + 全部 `docs/规范/` + [`.agents/skills/`](./.agents/skills/) | 复杂产品；OpenSpec / CodeGraph / Superpowers **按需**安装 |
+| **Minimal** | `AGENTS.md` | 个人、小项目、快速试点；只要底线、暂不装工具链 |
+| **Standard** | Minimal + [需求治理与文档结构.md](./docs/规范/需求治理与文档结构.md) + PR 模板（推荐） | 有文档治理、暂不装 OpenSpec 等工具的团队 |
+| **Full** | Standard + 全部 `docs/规范/` + [`.agents/skills/`](./.agents/skills/) + **推荐**安装 OpenSpec / CodeGraph / Superpowers | **团队默认推荐**；复杂产品与完整 AI 协作 |
+
+**推荐路径：** Full 档位 + 三工具全套。OpenSpec 负责需求、规格、任务与验收；Superpowers 负责澄清、TDD、调试、审查等执行纪律，**不替代** OpenSpec 的需求主流程。详见 [Superpowers与OpenSpec使用指南.md](./Superpowers与OpenSpec使用指南.md)。
 
 档位详情见 [AGENTS.md 规则包档位](./AGENTS.md#规则包附带文档)。
 
@@ -96,14 +101,16 @@
 | 完成前 | 跑验证并说明结果；跑不了则写原因和剩余风险 |
 | 提交 / 发布 | 仅当用户明确要求；AI 不得擅自 commit / push / deploy |
 
-## 可选工具（Full 档位，均可缺省）
+## 推荐工具链（Full 档位）
 
-| 组件 | 职责 | 缺失时 |
-| --- | --- | --- |
-| [`AGENTS.md`](./AGENTS.md) | 规则、验证、优先级 | — |
-| [OpenSpec](https://github.com/Fission-AI/OpenSpec) | 需求、规格、任务、验收 | issue / PR / 轻量记录 |
-| [CodeGraph](https://github.com/colbymchenry/codegraph) | 调用链、影响分析 | IDE 引用、人工阅读 |
-| [Superpowers](https://github.com/obra/superpowers) | AI 执行纪律（TDD、调试、审查） | 通用习惯 + 项目 skills |
+`AGENTS.md` 为必需基线；下表三工具 **推荐一起安装**，缺省时 fallback，不影响 AGENTS.md 效力。
+
+| 组件 | 职责 | 角色 | 缺失时 |
+| --- | --- | --- | --- |
+| [`AGENTS.md`](./AGENTS.md) | 规则、验证、优先级 | **必需** | — |
+| [OpenSpec](https://github.com/Fission-AI/OpenSpec) | 需求、规格、任务、验收 | **主**（需求治理） | issue / PR / 轻量记录 |
+| [CodeGraph](https://github.com/colbymchenry/codegraph) | 调用链、影响分析 | 推荐 | IDE 引用、人工阅读 |
+| [Superpowers](https://github.com/obra/superpowers) | AI 执行纪律（TDD、调试、审查） | **辅**（执行方法） | 通用习惯 + 项目 skills |
 
 安装命令与 AI 提示词见 [docs/安装与AI提示词.md](./docs/安装与AI提示词.md)。
 
@@ -115,7 +122,7 @@
 | [`docs/规范/规范总览.md`](./docs/规范/规范总览.md) | 规范目录索引 |
 | [`docs/规范/需求治理与文档结构.md`](./docs/规范/需求治理与文档结构.md) | 治理模式、需求变化与归档 |
 | [`docs/规范/AI协作与工具链.md`](./docs/规范/AI协作与工具链.md) | 工具分工、任务分流 |
-| [`docs/安装与AI提示词.md`](./docs/安装与AI提示词.md) | 复制步骤、AI 安装提示词、可选工具 |
+| [`docs/安装与AI提示词.md`](./docs/安装与AI提示词.md) | 复制步骤、AI 安装提示词、推荐工具 |
 | [OpenSpec新需求开发步骤.md](./OpenSpec新需求开发步骤.md) | 新需求流程 |
 | [OpenSpec需求调整步骤.md](./OpenSpec需求调整步骤.md) | 需求变更流程 |
 | [Superpowers与OpenSpec使用指南.md](./Superpowers与OpenSpec使用指南.md) | 工具配合与场景分流 |
@@ -132,7 +139,7 @@
 | 复杂、高风险、跨模块 | 点名 `$executing-complex-requirements` |
 | 已有需求范围或验收调整 | [OpenSpec需求调整步骤.md](./OpenSpec需求调整步骤.md)；结构化同步可点名 `$updating-requirement-changes`（**仅点名触发**） |
 
-启用 OpenSpec 时：**OpenSpec 管需求与验收，Superpowers 管执行纪律**。详见 [Superpowers与OpenSpec使用指南.md](./Superpowers与OpenSpec使用指南.md)。
+**OpenSpec 为主、Superpowers 为辅：** 有 `openspec/` 时走 OpenSpec change 主流程；Superpowers 仅补充澄清、实现与验证纪律，不替代需求记录。详见 [Superpowers与OpenSpec使用指南.md](./Superpowers与OpenSpec使用指南.md)。
 
 ## 已有规则文件的项目
 

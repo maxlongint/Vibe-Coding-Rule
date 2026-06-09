@@ -13,7 +13,7 @@
 2. **Standard / Full：** 建立 `docs/规范/`，复制 [需求治理与文档结构.md](./规范/需求治理与文档结构.md)
 3. **Full：** 继续复制 [AI协作与工具链.md](./规范/AI协作与工具链.md)、[规范总览.md](./规范/规范总览.md)、[模板/](./规范/模板/) 等
 4. **Standard / Full（推荐）：** 复制 `.github/pull_request_template.md` 与 [轻量记录模板.md](./规范/模板/轻量记录模板.md)
-5. **Full（可选）：** 复制 `.agents/skills/`；按需安装 OpenSpec / CodeGraph / Superpowers（见下文）
+5. **Full（推荐）：** 复制 `.agents/skills/`；**推荐**安装 OpenSpec / CodeGraph / Superpowers（见下文）
 6. **（可选）** 建立 `docs/README.md`；在 `docs/规范/` 追加本项目 UI/API 等特有规则
 
 若目标项目已有 `AGENTS.md` 或 `docs/规范/`，先 diff 说明冲突与合并策略，**不得静默覆盖**。
@@ -70,11 +70,11 @@
 3. 复制 .agents/skills/ 到项目 .agents/skills/
 4. 复制 .github/pull_request_template.md 到项目 .github/
 
-【可选工具（在当前业务项目内按需安装，不必全部安装）】
-5. （可选）OpenSpec：npm install -D @fission-ai/openspec@latest，再 npx openspec init
-6. （可选）CodeGraph：项目级 MCP（local），codegraph init -i
-7. （可选）Superpowers：按当前 AI 工具官方说明安装
-未安装的工具按 AGENTS.md 自洽规则 fallback；安装前向用户确认是否需要。
+【推荐工具（在当前业务项目内安装；OpenSpec 为主、Superpowers 为辅）】
+5. OpenSpec（推荐）：npm install -D @fission-ai/openspec@latest，再 npx openspec init
+6. CodeGraph（推荐）：项目级 MCP（local），codegraph init -i
+7. Superpowers（推荐）：按当前 AI 工具官方说明安装
+三者缺一时按 AGENTS.md 自洽规则 fallback；若用户明确只要 Minimal/Standard 或暂不装某工具，经确认后跳过。
 
 若某文件已存在，先 diff 并说明合并策略；Node 命令前检查 .node-version。
 各步写入或执行前申请权限。
@@ -107,9 +107,9 @@
 请先确认目标路径存在且为业务项目根目录，再按 docs/安装与AI提示词.md 中对应档位的步骤执行；所有文件写入目标项目，不要修改规则包来源仓库。
 ```
 
-## 可选工具安装
+## 推荐工具安装
 
-均在**业务项目根目录**安装；未安装时按 [AGENTS.md](../AGENTS.md) fallback。
+均在**业务项目根目录**安装；**Full 档位推荐三工具全套**（OpenSpec 为主、Superpowers 为辅）。未安装时按 [AGENTS.md](../AGENTS.md) fallback。
 
 ### OpenSpec
 
