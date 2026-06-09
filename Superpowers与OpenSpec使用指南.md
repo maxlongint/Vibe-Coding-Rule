@@ -1,12 +1,12 @@
 # Superpowers 与 OpenSpec 用法对照
 
-本文说明两套流程在“给现有项目/现有功能增加新功能”时应该怎么用。强制规则见 `AGENTS.md` 第 1 节「目录规则」和第 8 节「AI 执行规则」；本文侧重流程对照、提示词和阶段映射。
+本文说明两套流程在“给现有项目/现有功能增加新功能”时应该怎么用。强制规则见 `AGENTS.md` 第 1 节「文档目录与需求记录结构」和第 8 节「AI 执行规则」；本文侧重流程对照、提示词和阶段映射。
 
 ## 结论
 
-如果项目没有 OpenSpec，优先使用 **superpowers 流程**。
+如果项目已经使用 OpenSpec，优先使用 **OpenSpec change 流程**，Superpowers 作为澄清、实现和验证纪律的补充。
 
-如果项目已经使用 OpenSpec，优先使用 **OpenSpec change 流程**，superpowers 作为思考、实现和验证纪律的补充。
+如果项目没有 OpenSpec，可按 Superpowers 流程推进设计与计划；但若涉及**真实业务需求**，须先确认需求记录载体（初始化 OpenSpec、外部系统或轻量记录），见 `AGENTS.md` 第 1 节，不得跳过可追溯治理底线。
 
 ## 场景一：只使用 Superpowers
 
@@ -14,7 +14,7 @@
 
 - 项目没有 `openspec/` 目录
 - 团队没有要求用 OpenSpec 管理需求
-- 你希望 Codex 先理解需求，再设计、计划、实现、验证
+- 你希望 AI 先理解需求，再设计、计划、实现、验证
 
 推荐顺序：
 
@@ -54,13 +54,15 @@ OpenSpec 的核心流程：
 3. Implementation
 4. Archive
 
+**斜杠命令说明：** `/opsx:propose`、`/opsx:apply`、`/opsx:sync`、`/opsx:archive` 属于基础工作流，通常在 `openspec init` 后可用。`/opsx:new`、`/opsx:continue`、`/opsx:ff`、`/opsx:verify` 属于**扩展工作流**，需先配置 profile 并执行 `openspec update`，否则命令可能不存在；不可用时退回基础路径或直接维护 `openspec/changes/<change-name>/` 文档。
+
 常见命令路径：
 
 ```text
 /opsx:propose <change-name> -> /opsx:apply -> /opsx:sync -> /opsx:archive
 ```
 
-或扩展路径：
+或扩展路径（需 profile + `openspec update`）：
 
 ```text
 /opsx:new <change-name> -> /opsx:ff 或 /opsx:continue -> /opsx:apply -> /opsx:verify -> /opsx:archive
@@ -83,10 +85,10 @@ openspec/changes/<change-name>/
 
 | 阶段 | OpenSpec | Superpowers 辅助技能 |
 | --- | --- | --- |
-| 需求澄清 | `/opsx:propose` 或 `/opsx:new` | `superpowers:brainstorming` |
-| 设计与任务 | `/opsx:ff` 或 `/opsx:continue` | `superpowers:writing-plans` |
+| 需求澄清 | `/opsx:propose` 或 `/opsx:new`（扩展） | `superpowers:brainstorming` |
+| 设计与任务 | `/opsx:ff` 或 `/opsx:continue`（扩展） | `superpowers:writing-plans` |
 | 实现 | `/opsx:apply` | `superpowers:test-driven-development` |
-| 验证 | `/opsx:verify`、`openspec validate`、项目测试 | `superpowers:verification-before-completion` |
+| 验证 | `/opsx:verify`（扩展）、`openspec validate`、项目测试 | `superpowers:verification-before-completion` |
 | 归档 | `/opsx:archive` | 完成后归档规格 |
 
 ## OpenSpec 项目的推荐做法
@@ -105,7 +107,7 @@ openspec/changes/<change-name>/
 
 也就是说：
 
-> OpenSpec 是需求和规格的主流程，superpowers 是 Codex 执行时的工作纪律。
+> OpenSpec 是需求和规格的主流程，Superpowers 是 AI 编码代理执行时的工作纪律。
 
 ## 选择规则
 
@@ -138,7 +140,7 @@ superpowers:brainstorming
 /opsx:propose <change-name>
 ```
 
-或：
+扩展工作流（需 profile + `openspec update`）也可使用：
 
 ```text
 /opsx:new <change-name>
@@ -167,8 +169,8 @@ superpowers:brainstorming
 ## 推荐默认策略
 
 1. 先检查项目是否存在 `openspec/`。
-2. 如果存在，走 OpenSpec change。
-3. 如果不存在，走 superpowers。
-4. 实现前必须有设计或任务清单。
-5. 完成前必须运行验证。
+2. 如果存在，走 OpenSpec change 主流程，Superpowers 作澄清、TDD、验证等执行纪律补充。
+3. 如果不存在，可走 Superpowers 流程承载设计与计划；但若任务属于**真实业务需求**（会改变行为、接口、数据、权限、流程或验收标准），须先向用户确认是否初始化 OpenSpec、采用外部需求系统或使用轻量记录（见 `AGENTS.md` 第 1 节），不得默认自建自定义需求目录。
+4. 实现前必须有设计或任务清单，并满足 `AGENTS.md` 的需求治理底线。
+5. 完成前必须运行验证，并说明验证结果和剩余风险。
 

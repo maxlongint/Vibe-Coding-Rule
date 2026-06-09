@@ -11,7 +11,7 @@
 | | 新需求 | 需求调整 |
 | --- | --- | --- |
 | 起点 | 从零创建 change | 找到**已有** OpenSpec change 或外部需求记录 |
-| 典型 AI 命令 | `/opsx:propose <name>` 或 `/opsx:new <name>` | `/opsx:continue <name>` 或直接更新 change 文档 |
+| 典型 AI 命令 | `/opsx:propose <name>` 或 `/opsx:new <name>`（扩展） | `/opsx:continue <name>`（扩展）或直接更新 change 文档 |
 | 是否新建 change | **必须**新建 | **通常继续用原 change** |
 | 历史处理 | 无历史 | 正文更新为当前口径，**追加**变化记录，不覆盖历史 |
 | 核心原则 | 先规格后实现 | **先改记录，再改代码** |
@@ -22,6 +22,15 @@
 2. 已读取 `AGENTS.md`，确认本次调整属于**已有需求的变化**，而不是全新需求或普通讨论。
 3. 已定位到原记录载体：`openspec/changes/<change-name>/`，或外部需求系统链接/编号。
 4. 若变化会影响行为、接口、数据、权限、流程或验收标准，必须先同步需求记录，再进入实现。
+
+## OpenSpec 斜杠命令与扩展工作流
+
+| 类型 | 典型命令 | 启用前提 |
+| --- | --- | --- |
+| 基础工作流 | `/opsx:propose`、`/opsx:apply`、`/opsx:sync`、`/opsx:archive` | 通常在 `openspec init` 后即可使用 |
+| 扩展工作流 | `/opsx:new`、`/opsx:continue`、`/opsx:ff`、`/opsx:verify` | 需先配置 **profile** 并执行 `openspec update`；否则命令可能不存在 |
+
+扩展命令不可用时，直接更新 `openspec/changes/<change-name>/` 下的文档，或使用 `openspec validate` 与项目测试完成验证。
 
 ## 完整步骤
 
@@ -344,13 +353,13 @@ openspec status --change <change-name>
 
 ### 第 9 步：重新做影响分析（中/重大变化）
 
-若变化影响模块、数据流、权限、状态流转或跨前后端边界，应重新分析影响范围。
+若变化影响模块、数据流、权限、状态流转或跨前后端边界，**必须先完成影响分析**，再进入实现。
 
-**推荐动作：**
+**必须动作：**
 
-1. 使用 CodeGraph 分析调用链、依赖关系和影响模块。
+1. 完成影响分析（CodeGraph 可用时优先使用）。
 2. 把结论写入 `design.md` 或 `tasks.md`。
-3. 无 CodeGraph 时，记录人工影响判断和剩余风险。
+3. CodeGraph 不可用时，记录人工影响判断和剩余风险。
 
 **终端命令（辅助查看 change 当前状态）：**
 
@@ -586,13 +595,15 @@ openspec archive <change-name>
 
 ### AI 斜杠命令
 
+扩展命令（`/opsx:new`、`/opsx:continue`、`/opsx:ff`、`/opsx:verify`）需 profile + `openspec update`；不可用时直接维护 change 文档或使用 CLI。
+
 | 步骤 | 命令 | 用途 |
 | --- | --- | --- |
-| 定位与修订 artifact | `/opsx:continue <change-name>` | 分步补全或修订 proposal、design、tasks、specs |
+| 定位与修订 artifact | `/opsx:continue <change-name>`（扩展） | 分步补全或修订 proposal、design、tasks、specs |
 | 重大变化新建 change | `/opsx:propose <new-change-name>` | 目标变化过大时新建 change |
-| 重大变化新建 change | `/opsx:new <new-change-name>` | 扩展工作流下新建 change |
+| 重大变化新建 change | `/opsx:new <new-change-name>`（扩展） | 扩展工作流下新建 change |
 | 继续实现 | `/opsx:apply <change-name>` | 按更新后的 tasks.md 推进实现 |
-| 验证 | `/opsx:verify <change-name>` | 按更新后的验收标准验证 |
+| 验证 | `/opsx:verify <change-name>`（扩展） | 按更新后的验收标准验证；不可用则用 `openspec validate` + 项目测试 |
 | 同步主 spec | `/opsx:sync <change-name>` | 完成后合并 delta spec |
 | 归档 | `/opsx:archive <change-name>` | 归档已完成 change |
 
