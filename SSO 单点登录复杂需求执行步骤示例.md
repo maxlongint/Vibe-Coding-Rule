@@ -1,8 +1,10 @@
 # SSO 单点登录复杂需求执行步骤示例
 
-本文档是一个教学示例，用来说明：在大型既有项目中新增 SSO 单点登录能力时，AI 和开发者应如何按当前 `AGENTS.md` 使用 `AGENTS.md + CodeGraph + OpenSpec + Superpowers` 协作模型推进需求。
+> **说明：** 本示例以 OpenSpec change 为主记录载体，便于对照 Full 档位工作流。项目未启用 OpenSpec 时，将 change 换为 issue、PR 或外部需求系统即可，**强制底线仍以 [AGENTS.md](./AGENTS.md) 为准**。
 
-SSO 属于重大真实业务需求。它通常会改变登录入口、认证协议、用户绑定、权限映射、Session 或 token 逻辑、前端路由守卫、配置管理、审计日志、发布策略和验收标准。因此，正式实现前必须先建立可追溯需求记录；默认主载体是 OpenSpec change，而不是自定义 `docs/需求/` 目录。
+本文档是一个教学示例，用来说明：在大型既有项目中新增 SSO 单点登录能力时，AI 和开发者应如何按「先记录、再分析、再实现」推进需求。示例演示 Full 档位下可选的 `AGENTS.md + OpenSpec + CodeGraph + Superpowers` 组合；**仅使用 AGENTS.md 时**，将 OpenSpec change 换为 issue/PR 等记录载体，影响分析换为 IDE/人工阅读即可。
+
+SSO 属于重大真实业务需求。它通常会改变登录入口、认证协议、用户绑定、权限映射、Session 或 token 逻辑、前端路由守卫、配置管理、审计日志、发布策略和验收标准。因此，正式实现前必须先建立可追溯需求记录；**若项目已启用 OpenSpec**，主载体为 OpenSpec change；否则使用 AGENTS.md 规定的其他可追溯载体，而不是自定义未约定的 `docs/需求/` 目录。
 
 推荐主流程：
 

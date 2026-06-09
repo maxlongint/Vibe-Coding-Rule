@@ -1,5 +1,7 @@
 # OpenSpec 需求调整步骤
 
+> **适用范围：** 项目**已安装并初始化 OpenSpec**（存在 `openspec/`）。未启用 OpenSpec 时，需求变化按 [AGENTS.md](./AGENTS.md)「需求治理与影响分析（自洽）」与 [需求治理与文档结构.md](./docs/规范/需求治理与文档结构.md) 在 issue、PR 或外部系统中更新记录。
+
 本文说明在已启用 OpenSpec 的项目中，如何对**已有需求**进行补充、范围变化、验收调整或方案调整。强制规则见 [需求治理与文档结构.md](./docs/规范/需求治理与文档结构.md)；新需求从零创建的流程见 [OpenSpec新需求开发步骤.md](./OpenSpec新需求开发步骤.md)；项目级需求变化同步技能见 [updating-requirement-changes/SKILL.md](./.agents/skills/updating-requirement-changes/SKILL.md)；复杂需求示例见 [SSO 单点登录复杂需求执行步骤示例.md](./SSO%20单点登录复杂需求执行步骤示例.md) 第 8 节。
 
 ## 一句话
