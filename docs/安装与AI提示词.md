@@ -76,8 +76,8 @@
 7. Superpowers（推荐）：按当前 AI 工具官方说明安装
 三者缺一时按 AGENTS.md 自洽规则 fallback；若用户明确只要 Minimal/Standard 或暂不装某工具，经确认后跳过。
 
-若某文件已存在，先 diff 并说明合并策略；Node 命令前检查 .node-version。
-各步写入或执行前申请权限。
+【通用约束】若目标路径已存在同名文件，先 diff 并说明合并策略，经我确认后再写入；各步写入或执行前申请权限。
+【OpenSpec 步骤】执行 npm/npx 前，若项目存在 .node-version，按 AGENTS.md 切换 Node 版本。
 全部完成后列出：已复制文件、已初始化目录、验证命令结果，以及是否需要重启 AI 工具。
 ```
 
@@ -127,7 +127,7 @@ AI 安装提示词：
 请为当前业务项目安装 OpenSpec，不要在本规则仓库中初始化。
 先进入当前项目根目录，再从 https://github.com/Fission-AI/OpenSpec 查看官方 README。
 OpenSpec 优先安装为当前项目依赖，不要默认做全局安装。
-执行 Node 相关命令前，先检查项目是否存在 .node-version；存在则通过 fnm 使用对应版本。
+执行 npm/npx 前，若项目存在 .node-version，按 AGENTS.md 通过项目约定的版本管理工具（如 fnm、nvm）切换 Node 版本。
 如果需要安装 Node 版本、写入 package.json 或修改项目目录，请先向我申请权限。
 安装完成后运行 npx openspec --version 验证，并在当前项目根目录执行 npx openspec init。
 ```
