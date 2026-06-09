@@ -1,6 +1,6 @@
 # OpenSpec 需求调整步骤
 
-本文说明在已启用 OpenSpec 的项目中，如何对**已有需求**进行补充、范围变化、验收调整或方案调整。强制规则见 `AGENTS.md` 第 2 节「需求变化与归档规则」；新需求从零创建的流程见 `OpenSpec新需求开发步骤.md`；项目级需求变化同步技能见 `.agents/skills/updating-requirement-changes/SKILL.md`；复杂需求示例见 `SSO 单点登录复杂需求执行步骤示例.md` 第 8 节。
+本文说明在已启用 OpenSpec 的项目中，如何对**已有需求**进行补充、范围变化、验收调整或方案调整。强制规则见 [需求治理与文档结构.md](./docs/规范/需求治理与文档结构.md)；新需求从零创建的流程见 [OpenSpec新需求开发步骤.md](./OpenSpec新需求开发步骤.md)；项目级需求变化同步技能见 [updating-requirement-changes/SKILL.md](./.agents/skills/updating-requirement-changes/SKILL.md)；复杂需求示例见 [SSO 单点登录复杂需求执行步骤示例.md](./SSO%20单点登录复杂需求执行步骤示例.md) 第 8 节。
 
 ## 一句话
 
@@ -95,7 +95,7 @@ openspec status --change <change-name>
 | 归属 | 说明 | 处理方式 |
 | --- | --- | --- |
 | 原需求变化 | 同一能力下的补充、范围或验收调整 | 走本文流程 |
-| 新需求 | 目标变成另一项系统能力 | 见 `OpenSpec新需求开发步骤.md`，新建 change |
+| 新需求 | 目标变成另一项系统能力 | 见 [OpenSpec新需求开发步骤.md](./OpenSpec新需求开发步骤.md)，新建 change |
 | 缺陷修复 | 修复实现偏差，不改变已确认业务规则 | 通常不建 change；若改变验收标准则按需求变化处理 |
 | 轻量调整 | 文案、样式等不影响验收底线 | 更新任务记录或交付说明即可 |
 | 外部系统已有事项 | Jira、Linear 等已有记录 | 同步到 OpenSpec 或保留外部链接 |
