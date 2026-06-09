@@ -41,27 +41,31 @@ GitHub 地址：<https://github.com/colbymchenry/codegraph>
 
 CodeGraph 用于让 AI 从已索引的代码图中理解项目，而不是每次都从零开始搜索文件。它适合用于找功能入口、查调用关系、判断修改影响范围，以及辅助 bug 定位、重构和代码审查。
 
+**CodeGraph 应安装在使用方当前业务项目中，而不是本规则仓库。** 进入目标项目根目录后再执行安装和初始化；MCP 配置优先选择**项目级（local）**，让 `.codegraph/` 索引和 AI 配置随项目一起管理。
+
 ### 通用安装方式
 
-请优先查看 [CodeGraph 官方 README](https://github.com/colbymchenry/codegraph)，按当前系统和 AI 编码工具选择对应安装方式。常见路径包括官方安装脚本、`npm i -g @colbymchenry/codegraph` 或 `npx @colbymchenry/codegraph`。
+请优先查看 [CodeGraph 官方 README](https://github.com/colbymchenry/codegraph)，在**当前业务项目根目录**按系统和 AI 编码工具完成安装。常见路径包括 `npx @colbymchenry/codegraph`，或先安装 CLI 后执行项目级配置。
 
-安装完成后：
+推荐步骤：
 
-1. 运行 `codegraph --version` 验证。
-2. 按官方说明配置 AI Agent（如需非交互式安装，可使用 `codegraph install --yes`）。
-3. 在项目根目录执行 `codegraph init -i` 生成索引。
-4. 重启 AI 编码工具，让 MCP 配置生效。
+1. 进入目标项目根目录：`cd your-project`
+2. 运行安装器，**MCP 配置选择项目级**：`codegraph install --target=auto --location=local --yes`（交互式安装时选择「仅当前项目」）
+3. 在项目根目录建立索引：`codegraph init -i`
+4. 运行 `codegraph --version` 验证 CLI 可用
+5. 重启 AI 编码工具，让项目级 MCP 配置生效
 
 具体命令和平台差异以官方文档为准。
 
 ### 通过 AI 安装
 
 ```text
-请从 https://github.com/colbymchenry/codegraph 安装 CodeGraph。
-先查看官方 README 和安装脚本，确认适合当前系统的安装方式。
-如果需要执行网络下载、修改全局配置或写入用户目录，请先向我申请权限。
-安装完成后运行 codegraph --version 验证，配置 AI Agent，并在当前项目根目录执行 codegraph init -i。
-最后说明是否需要重启当前 AI 工具，以及后续如何更新索引。
+请为当前业务项目安装 CodeGraph，不要在本规则仓库中初始化。
+先进入当前项目根目录，再从 https://github.com/colbymchenry/codegraph 查看官方 README 和安装脚本。
+MCP 配置优先选择项目级（local），不要默认写入全局配置。
+如果需要执行网络下载、修改配置或写入项目目录，请先向我申请权限。
+安装完成后运行 codegraph --version 验证，并在当前项目根目录执行 codegraph init -i。
+最后说明生成了哪些项目级配置文件和索引文件，以及是否需要重启当前 AI 工具。
 ```
 
 ## 安装 OpenSpec
@@ -70,29 +74,37 @@ GitHub 地址：<https://github.com/Fission-AI/OpenSpec>
 
 OpenSpec 用于把需求变化从聊天记录里拉出来，形成可追溯的 proposal、design、tasks 和 spec。它适合承载新业务能力、API 与数据模型变化、中等和重大需求变更，以及验收标准和任务拆分。
 
+**OpenSpec 应安装在使用方当前业务项目中，而不是本规则仓库。** 进入目标项目根目录后安装 CLI 并执行 `openspec init`，让 `openspec/` 目录、配置和 AI 指令文件随项目一起管理。
+
 ### 通用安装方式
 
-OpenSpec 要求 Node.js 20.19.0 或更高版本。请优先查看 [OpenSpec 官方 README](https://github.com/Fission-AI/OpenSpec) 和安装文档。
+OpenSpec 要求 Node.js 20.19.0 或更高版本。请优先查看 [OpenSpec 官方 README](https://github.com/Fission-AI/OpenSpec) 和安装文档，在**当前业务项目根目录**完成安装。
 
-常见安装方式：
+推荐步骤：
+
+1. 进入目标项目根目录：`cd your-project`
+2. 将 OpenSpec 安装为项目依赖（推荐）：
 
 ```powershell
-npm install -g @fission-ai/openspec@latest
-openspec --version
+npm install -D @fission-ai/openspec@latest
+npx openspec --version
 ```
 
-也可使用 pnpm、yarn、bun 或 nix。安装完成后，在项目根目录执行 `openspec init` 初始化。
+也可使用 pnpm、yarn 或 bun 的项目级安装方式；具体以官方文档为准。
+3. 在当前项目根目录初始化：`npx openspec init`
+4. 确认项目内已生成 `openspec/` 目录及相关 AI 指令文件
 
 如果项目存在 `.node-version`，执行 Node 相关命令前先切换到对应版本（例如 `fnm use`）。
 
 ### 通过 AI 安装
 
 ```text
-请从 https://github.com/Fission-AI/OpenSpec 安装 OpenSpec。
-先查看官方 README，确认当前 Node 版本是否满足要求。
+请为当前业务项目安装 OpenSpec，不要在本规则仓库中初始化。
+先进入当前项目根目录，再从 https://github.com/Fission-AI/OpenSpec 查看官方 README。
+OpenSpec 优先安装为当前项目依赖（例如 npm install -D @fission-ai/openspec@latest），不要默认做全局安装。
 执行 Node 相关命令前，先检查项目是否存在 .node-version；存在则通过 fnm 使用对应版本。
-如果需要安装 Node 版本、执行 npm 全局安装或写入用户目录，请先向我申请权限。
-安装完成后运行 openspec --version 验证，并在当前项目根目录执行 openspec init。
+如果需要安装 Node 版本、写入 package.json 或修改项目目录，请先向我申请权限。
+安装完成后运行 npx openspec --version 验证，并在当前项目根目录执行 npx openspec init。
 初始化后说明创建了哪些目录、命令或 AI 指令文件。
 ```
 
