@@ -1,4 +1,0 @@
-interface:
-  display_name: "更新需求变化"
-  short_description: "处理已有需求的补充、范围变化、验收调整和 OpenSpec 同步"
-  default_prompt: "使用 updating-requirement-changes 处理这个已有需求变化，更新当前有效口径并保留变化记录。"
