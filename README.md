@@ -7,7 +7,7 @@
 
 跨项目、前后端通用，不依赖任何特定 AI 工具或插件。
 
-**English:** [`README.en.md`](./README.en.md) · **快速选型:** [`快速开始.md`](./快速开始.md) · **版本记录:** [`CHANGELOG.md`](./CHANGELOG.md)
+**快速选型:** [`快速开始.md`](./快速开始.md) · **版本记录:** [`CHANGELOG.md`](./CHANGELOG.md)
 
 ## 用法
 
@@ -140,6 +140,10 @@ your-project/
 3. 确认 $brainstorming 等技能可见
 说明：无项目 init；产出须回填 OpenSpec change 或需求载体，遵守 AGENTS.md。
 ```
+
+## 贡献
+
+详见 [`CONTRIBUTING.md`](./CONTRIBUTING.md)。请保持改动聚焦：只收跨项目通用的 AI 协作底线，不收公司内部流程或框架风格大全。
 
 ## 许可证
 
