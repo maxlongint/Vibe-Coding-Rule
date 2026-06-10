@@ -77,15 +77,17 @@ your-project/
 
 ### 通过 AI 安装
 
-在**业务项目**（勿在本规范仓库）里把下面提示词发给 AI 完成**安装**；安装完成后，按提示词下方的「如何初始化 xxx」步骤自行操作。
+在**业务项目**（勿在本规范仓库）里把下面提示词发给 AI 完成**安装**；安装完成后，按各工具小节的「初始化」步骤自行操作。
 
-**OpenSpec**（需项目初始化）
+#### OpenSpec（需项目初始化）
 
 | 项目 | 说明 |
 | --- | --- |
 | **环境** | Node.js ≥ 20.19.0；在**业务项目根目录**操作；有 `.node-version` 时先按 `AGENTS.md` 切换版本 |
 | **安装** | 项目依赖 `npm install -D @fission-ai/openspec`（勿全局安装） |
 | **验证** | 存在 `openspec/` 目录；CLI 有版本输出；AI 中 `/opsx:propose` 可用 |
+
+安装提示词：
 
 ```text
 请从 https://github.com/Fission-AI/OpenSpec 为当前项目安装 OpenSpec。
@@ -94,19 +96,21 @@ your-project/
 安装完成后验证 CLI 可用。
 ```
 
-**如何初始化 OpenSpec**
+初始化：
 
 1. 在业务项目根目录执行 `npx openspec init`，生成 `openspec/`
 2. 执行 `npx openspec --version` 验证 CLI 可用
 3. （可选）执行 `npx openspec config profile` 选择 profile，再执行 `npx openspec update` 启用扩展斜杠命令
 
-**CodeGraph**（需本机 + 项目初始化）
+#### CodeGraph（需本机 + 项目初始化）
 
 | 项目 | 说明 |
 | --- | --- |
 | **环境** | Windows / macOS / Linux；CLI 安装后需**新开终端**；当前 AI 工具须支持 MCP |
 | **安装** | 项目依赖 `npm install -D @colbymchenry/codegraph`（勿全局安装）；需查官方 README 时再参考安装脚本 |
 | **验证** | 项目内有 `.codegraph/`；AI 可调用 `codegraph_explore` 等 MCP 工具 |
+
+安装提示词：
 
 ```text
 请从 https://github.com/colbymchenry/codegraph 为当前项目安装 CodeGraph。
@@ -115,13 +119,13 @@ your-project/
 安装完成后运行 codegraph --version 验证，并说明是否需要重启当前 AI 工具。
 ```
 
-**如何初始化 CodeGraph**
+初始化：
 
 1. 新开终端，执行 `npx codegraph install`，把 MCP 接入当前 AI 工具
 2. 在业务项目根目录执行 `npx codegraph init -i`（创建 `.codegraph/` 并建索引）
 3. 若未使用 `-i`：先执行 `npx codegraph init`，再执行 `npx codegraph index`
 
-**Superpowers**（无项目级 init，安装后需重启 AI 工具）
+#### Superpowers（无项目级 init，安装后需重启 AI 工具）
 
 | 项目 | 说明 |
 | --- | --- |
@@ -129,13 +133,15 @@ your-project/
 | **安装** | 例：Cursor 用 `/add-plugin superpowers`；详见 [官方 Installation](https://github.com/obra/superpowers#installation) |
 | **验证** | 技能目录可见；产出回填 OpenSpec change 或需求载体，遵守 `AGENTS.md` |
 
+安装提示词：
+
 ```text
 请从 https://github.com/obra/superpowers#installation 安装 Superpowers。
 先查看官方 README 和 Installation 章节，确认适合当前 AI 工具的安装方式。
 如果需要执行网络下载、修改全局配置或写入用户目录，请先向我申请权限。
 ```
 
-**如何初始化 Superpowers**
+初始化：
 
 1. 重启 AI 工具
 2. 确认 `$brainstorming` 等技能可触发
