@@ -1,4 +1,0 @@
-interface:
-  display_name: "执行复杂需求"
-  short_description: "复杂业务需求从记录、影响分析、计划、测试到验证交付的标准执行流程"
-  default_prompt: "Use $executing-complex-requirements to plan and execute this complex product requirement with traceability, impact analysis, tests, verification, review, and rollback."
