@@ -3,14 +3,36 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![GitHub](https://img.shields.io/badge/GitHub-maxlongint%2FVibe--Coding--Rule-blue?logo=github)](https://github.com/maxlongint/Vibe-Coding-Rule)
 
-面向 AI 辅助开发的通用协作规范。**一个文件、一页纸，复制即用。**
+面向 AI 辅助开发的通用协作规范。**核心规范一个文件、一页纸，复制即用。**
 
 跨项目、前后端通用，不依赖任何特定 AI 工具或插件。
 
+**English:** [`README.en.md`](./README.en.md) · **快速选型:** [`快速开始.md`](./快速开始.md) · **版本记录:** [`CHANGELOG.md`](./CHANGELOG.md)
+
 ## 用法
 
-把 [`AGENTS.md`](./AGENTS.md) 复制到你的项目根目录即可，Cursor 等 AI 工具会自动识别。
-若项目已有 `AGENTS.md`，先 diff 说明差异与合并方案，确认后再写入。
+### 业务项目目录（推荐结构）
+
+```text
+your-project/
+├── AGENTS.md                 # 从本仓库复制：AI 协作通用底线
+├── docs/                     # 项目规范（长期约定）；索引用 docs/README.md
+│   └── README.md             # 可从本仓库 docs/README.md 复制
+├── .agents/                  # 项目 skill（随仓库共享）
+│   ├── README.md             # skill 目录索引；可从本仓库 .agents/README.md 复制
+│   └── skills/<name>/SKILL.md
+└── openspec/                 # 仅启用 OpenSpec 时：进行中需求变更
+    └── changes/<change-name>/
+```
+
+`docs/` 放稳定规范；`openspec/changes/` 放进行中需求（未启用 OpenSpec 则用 issue/PR）。详见 [`docs/README.md`](./docs/README.md)。
+
+### 初始化步骤
+
+1. 复制 [`AGENTS.md`](./AGENTS.md) 到业务项目根目录（若已有，先 diff 再合并）。
+2. 创建 `docs/`，复制 [`docs/README.md`](./docs/README.md) 作目录说明与索引。
+3. 创建 `.agents/`，复制 [`.agents/README.md`](./.agents/README.md) 作 skill 索引。
+4. 不确定流程深度？看 [`快速开始.md`](./快速开始.md) 三种场景；启用 OpenSpec 再按 [`新需求开发.md`](./新需求开发.md) 操作。
 
 ## 它管什么
 
@@ -25,13 +47,13 @@
 
 ## 它不管什么
 
-技术栈、框架、命令、UI/API/业务约定等**项目特有内容**，放在你项目自己的 README 与文档里，不写进 `AGENTS.md`——这样这份规范才能保持跨项目通用、不膨胀。
+技术栈、框架、命令、UI/API/业务约定等**项目规范文档**，统一放在项目 `docs/` 下；**项目 skill** 放在 `.agents/skills/` 下，并在 `.agents/README.md` 维护技能包目录（详见 `AGENTS.md` 开头）。都不写进 `AGENTS.md`——这样这份规范才能保持跨项目通用、不膨胀。
 
 ## 推荐工具链（可选）
 
 只用 `AGENTS.md` 已经够用。需要更完整的需求治理与执行纪律时，推荐组合 **OpenSpec（主）+ CodeGraph + Superpowers（辅）**：OpenSpec 管需求与验收，CodeGraph 管影响分析，Superpowers 管执行方法。三者都不替代 `AGENTS.md` 底线，未安装时自动 fallback 到 issue/PR 与人工分析。
 
-开发流程见：[`新需求开发.md`](./新需求开发.md) · [`需求变更.md`](./需求变更.md)。
+开发流程见：[`新需求开发.md`](./新需求开发.md) · [`需求变更.md`](./需求变更.md) · 共用约定 [`流程公共约定.md`](./流程公共约定.md)。
 
 ### 通过 AI 安装
 
