@@ -24,7 +24,7 @@
 | `SECURITY.md` / `CODE_OF_CONDUCT.md` | 开源社区文件 |
 | `新需求开发.md` / `需求变更.md` | 可选流程（OpenSpec 主） |
 | `流程公共约定.md` | 流程文档共用段落，避免重复 |
-| `README.md` / `README.en.md` | 入口说明 |
+| `README.md` | 入口说明 |
 | `CHANGELOG.md` | 规范包版本演进 |
 
 ## 提交前请确认
