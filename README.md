@@ -77,69 +77,68 @@ your-project/
 
 ### 通过 AI 安装
 
-在**业务项目**里把下面提示词发给 AI，由它参考各工具官方说明完成安装与初始化（具体命令按当前环境处理；写入或改配置前先向你申请权限）：
+在**业务项目**（勿在本规范仓库）里把下面提示词发给 AI 完成**安装**；安装完成后，按提示词下方的「如何初始化 xxx」步骤自行操作。
 
 **OpenSpec**（需项目初始化）
 
 | 项目 | 说明 |
 | --- | --- |
 | **环境** | Node.js ≥ 20.19.0；在**业务项目根目录**操作；有 `.node-version` 时先按 `AGENTS.md` 切换版本 |
-| **安装** | 优先项目依赖 `npm install -D @fission-ai/openspec`；或全局 `npm install -g @fission-ai/openspec` |
-| **初始化** | 1. 在业务项目根目录执行 `npx openspec init`（全局安装则用 `openspec init`），生成 `openspec/`<br>2. 执行 `openspec --version` 验证 CLI 可用<br>3. （可选）执行 `openspec config profile` 选择 profile，再执行 `openspec update` 启用扩展斜杠命令 |
+| **安装** | 项目依赖 `npm install -D @fission-ai/openspec`（勿全局安装） |
 | **验证** | 存在 `openspec/` 目录；CLI 有版本输出；AI 中 `/opsx:propose` 可用 |
 
 ```text
-请为当前业务项目安装并初始化 OpenSpec，不要在 Vibe-Coding-Rule 规范仓库里操作。
-参考 https://github.com/Fission-AI/OpenSpec 官方文档。
-环境：Node.js ≥ 20.19.0；有 .node-version 时按 AGENTS.md 切换版本。
-安装：优先 npm install -D @fission-ai/openspec@latest（项目依赖）；若我同意也可用全局安装。
-初始化：
-1. 在项目根目录运行 npx openspec init（或 openspec init）
-2. 运行 openspec --version 验证
-3. 若我需要扩展工作流，再执行 openspec config profile 与 openspec update
-完成后列出创建的文件（如 openspec/）和验证命令输出。
+请从 https://github.com/Fission-AI/OpenSpec 为当前项目安装 OpenSpec。
+先查看官方 README，确认适合当前项目的安装方式（项目依赖，不要全局安装）。
+如果需要执行网络下载或修改项目文件，请先向我申请权限。
+安装完成后验证 CLI 可用。
 ```
+
+**如何初始化 OpenSpec**
+
+1. 在业务项目根目录执行 `npx openspec init`，生成 `openspec/`
+2. 执行 `npx openspec --version` 验证 CLI 可用
+3. （可选）执行 `npx openspec config profile` 选择 profile，再执行 `npx openspec update` 启用扩展斜杠命令
 
 **CodeGraph**（需本机 + 项目初始化）
 
 | 项目 | 说明 |
 | --- | --- |
 | **环境** | Windows / macOS / Linux；CLI 安装后需**新开终端**；当前 AI 工具须支持 MCP |
-| **安装** | 本机装 CLI（官方 `install.ps1` / `install.sh`，或 `npm i -g @colbymchenry/codegraph`） |
-| **初始化** | 1. 新开终端，执行 `codegraph install`，把 MCP 接入当前 AI 工具<br>2. 进入业务项目根目录，执行 `codegraph init -i`（创建 `.codegraph/` 并建索引）<br>3. 若未使用 `-i`：先执行 `codegraph init`，再执行 `codegraph index` |
+| **安装** | 项目依赖 `npm install -D @colbymchenry/codegraph`（勿全局安装）；需查官方 README 时再参考安装脚本 |
 | **验证** | 项目内有 `.codegraph/`；AI 可调用 `codegraph_explore` 等 MCP 工具 |
 
 ```text
-请为本机与当前业务项目安装并初始化 CodeGraph，不要在 Vibe-Coding-Rule 规范仓库里操作。
-参考 https://github.com/colbymchenry/codegraph 官方 README。
-环境：按我当前操作系统安装 CLI；安装后新开终端；连接我正在使用的 AI 工具（MCP）。
-安装 CLI：Windows 用 install.ps1，macOS/Linux 用 install.sh；或 npm i -g @colbymchenry/codegraph。
-初始化：
-1. 新开终端，运行 codegraph install（本机连 AI 工具）
-2. 在业务项目根目录运行 codegraph init -i
-3. 若未加 -i，则先 codegraph init，再 codegraph index
-完成后说明验证方式（如 MCP 工具可用、.codegraph/ 已生成）。
+请从 https://github.com/colbymchenry/codegraph 为当前项目安装 CodeGraph。
+先查看官方 README 和安装脚本，确认适合当前项目的安装方式（项目依赖，不要全局安装）。
+如果需要执行网络下载、修改全局配置或写入用户目录，请先向我申请权限。
+安装完成后运行 codegraph --version 验证，并说明是否需要重启当前 AI 工具。
 ```
 
-**Superpowers**（无需项目初始化）
+**如何初始化 CodeGraph**
+
+1. 新开终端，执行 `npx codegraph install`，把 MCP 接入当前 AI 工具
+2. 在业务项目根目录执行 `npx codegraph init -i`（创建 `.codegraph/` 并建索引）
+3. 若未使用 `-i`：先执行 `npx codegraph init`，再执行 `npx codegraph index`
+
+**Superpowers**（无项目级 init，安装后需重启 AI 工具）
 
 | 项目 | 说明 |
 | --- | --- |
 | **环境** | 安装在**当前 AI 工具侧**（用户级）；Cursor / Claude Code / Codex 等按官方章节操作 |
 | **安装** | 例：Cursor 用 `/add-plugin superpowers`；详见 [官方 Installation](https://github.com/obra/superpowers#installation) |
-| **初始化** | 无项目级 `init`<br>1. 按当前 AI 工具完成安装<br>2. 重启 AI 工具<br>3. 确认 `$brainstorming` 等技能可触发 |
 | **验证** | 技能目录可见；产出回填 OpenSpec change 或需求载体，遵守 `AGENTS.md` |
 
 ```text
-请为当前 AI 工具安装 Superpowers，参考 https://github.com/obra/superpowers#installation。
-环境：按我当前使用的 AI 工具选择对应安装方式（Cursor 可用 /add-plugin superpowers）。
-安装前若需改用户目录、克隆仓库或装插件，先向我申请权限。
-初始化：
-1. 按当前 AI 工具完成安装
-2. 提醒我重启 AI 工具
-3. 确认 $brainstorming 等技能可见
-说明：无项目 init；产出须回填 OpenSpec change 或需求载体，遵守 AGENTS.md。
+请从 https://github.com/obra/superpowers#installation 安装 Superpowers。
+先查看官方 README 和 Installation 章节，确认适合当前 AI 工具的安装方式。
+如果需要执行网络下载、修改全局配置或写入用户目录，请先向我申请权限。
 ```
+
+**如何初始化 Superpowers**
+
+1. 重启 AI 工具
+2. 确认 `$brainstorming` 等技能可触发
 
 ## 贡献
 
