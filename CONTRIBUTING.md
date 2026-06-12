@@ -22,7 +22,8 @@
 | `docs/README.md` | 业务项目 docs 目录说明模板（复制到业务项目） |
 | `.agents/README.md` | 业务项目 skill 目录索引模板（复制到业务项目） |
 | `SECURITY.md` / `CODE_OF_CONDUCT.md` | 开源社区文件 |
-| `新需求开发.md` / `需求变更.md` | 可选流程（OpenSpec 主） |
+| `新需求开发.md` / `需求变更.md` | 可选流程入口（正文在 `.agents/skills/` 对应 skill 的 `workflow.md`） |
+| `.agents/skills/new-feature-development/` / `.agents/skills/requirement-change/` | 流程 skill（SKILL.md 编排 + workflow.md 正文） |
 | `流程公共约定.md` | 流程文档共用段落，避免重复 |
 | `README.md` | 入口说明 |
 | `CHANGELOG.md` | 规范包版本演进 |

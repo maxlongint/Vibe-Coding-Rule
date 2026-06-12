@@ -2,6 +2,21 @@
 
 本文件记录 **Vibe Coding Rule** 规范包本身的演进。格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。
 
+## [Unreleased]
+
+### Added
+
+- `.agents/skills/new-feature-development/`：新需求开发流程 skill（`SKILL.md` 编排 + `workflow.md` 正文）
+- `.agents/skills/requirement-change/`：需求变更流程 skill（`SKILL.md` 编排 + `workflow.md` 正文）
+
+### Changed
+
+- `新需求开发.md`、`需求变更.md`：改为薄入口（流程速览 + 指向 skill 的 `workflow.md`），正文唯一来源迁入对应 skill 目录
+- `.agents/skills/new-feature-development/`、`.agents/skills/requirement-change/`：设置 `disable-model-invocation: true`，仅手动调用，不自动触发
+- `README.md`：新增「项目流程 skill」介绍、使用依赖说明（安装 skill 无此前提）与通过 AI 安装的提示词；初始化提示词改为询问是否安装 skill，不主动装三项工具
+- `.agents/README.md`：登记两个流程 skill，目录结构示例补充 `workflow.md`
+- `CONTRIBUTING.md`：仓库结构表同步 skill 化调整
+
 ## [1.1.1] - 2026-06-10
 
 ### Removed
