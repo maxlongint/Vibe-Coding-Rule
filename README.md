@@ -73,6 +73,8 @@ your-project/
 5. 未经明确要求不 commit / push / deploy
 6. 拿不准就停下来问
 
+展开章节含 **§7 实施与改动**（简洁、精准改动；属展开层，非速查底线）。澄清、任务拆解、TDD 等执行方法由 OpenSpec / Superpowers 承担，见 [`流程公共约定.md`](./流程公共约定.md)。
+
 ## 它不管什么
 
 技术栈、框架、命令、UI/API/业务约定等**项目规范文档**，统一放在项目 `docs/` 下；**项目 skill** 放在 `.agents/skills/` 下，并在 `.agents/README.md` 维护技能包目录（详见 `AGENTS.md` 开头）。都不写进 `AGENTS.md`——这样这份规范才能保持跨项目通用、不膨胀。

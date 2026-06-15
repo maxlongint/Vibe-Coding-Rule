@@ -11,6 +11,8 @@
 
 ### Changed
 
+- `AGENTS.md`：新增 §7「实施与改动」（简洁、精准改动）；§1 交叉引用；§7 与 OpenSpec / Superpowers 分工边界（不重复澄清、计划、TDD、change 流程）
+- `新需求开发.md`、`.agents/skills/new-feature-development/workflow.md`、`流程公共约定.md`、`README.md`：TDD 表述回归 Superpowers 推荐、非 AGENTS 重复
 - `新需求开发.md`、`需求变更.md`：改为薄入口（流程速览 + 指向 skill 的 `workflow.md`），正文唯一来源迁入对应 skill 目录
 - `.agents/skills/new-feature-development/`、`.agents/skills/requirement-change/`：设置 `disable-model-invocation: true`，仅手动调用，不自动触发
 - `README.md`：新增「项目流程 skill」介绍、使用依赖说明（安装 skill 无此前提）与通过 AI 安装的提示词；初始化提示词改为询问是否安装 skill，不主动装三项工具
