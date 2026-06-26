@@ -2,12 +2,11 @@
 
 本文件是 `.agents/skills/` 下所有 skill 技能包的索引。新增、重命名或移除 skill 时，请同步更新下表。
 
-以下两个流程 skill **使用**完整流程时需 OpenSpec（主）、CodeGraph、Superpowers；**安装 skill 本身无此前提**，未装齐三项工具时可按 [`流程公共约定.md`](../流程公共约定.md) fallback。说明与安装提示词见 [`README.md`](../README.md#项目流程-skill可选)。
+本规范包默认不内置项目级 skill；需要团队自定义或安装第三方 skill 时，再放入 `.agents/skills/` 并更新下表。流程说明直接查看根目录文档：[`新需求开发.md`](../新需求开发.md)、[`需求变更.md`](../需求变更.md)。
 
 | Skill | 路径 | 用途 |
 | --- | --- | --- |
-| `new-feature-development` | `.agents/skills/new-feature-development/` | 从零开发新需求（会改变外部可观察行为）的完整流程：建 change → 澄清 → proposal → 影响分析 → design/tasks → 实现 → 验证 → 归档。**仅手动调用** |
-| `requirement-change` | `.agents/skills/requirement-change/` | 已有需求口径变化的完整流程：定位原记录 → 判等级 → 澄清 → 更新正文 → 追加变化记录（不覆盖历史）→ 重做影响分析 → 同步验收 → 实现归档。**仅手动调用** |
+| （暂无） | - | 本规范包不默认提供项目级 skill |
 
 ## 目录结构
 
@@ -17,7 +16,7 @@
 └── skills/
     └── <skill-name>/
         ├── SKILL.md       # 技能入口（必需）
-        └── workflow.md    # 可选：流程正文、参考文档或脚本
+        └── supporting.*   # 可选：参考文档、脚本或模板
 ```
 
 ## 安装第三方 skill

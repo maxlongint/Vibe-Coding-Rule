@@ -4,20 +4,19 @@
 
 ## [Unreleased]
 
-### Added
-
-- `.agents/skills/new-feature-development/`：新需求开发流程 skill（`SKILL.md` 编排 + `workflow.md` 正文）
-- `.agents/skills/requirement-change/`：需求变更流程 skill（`SKILL.md` 编排 + `workflow.md` 正文）
-
 ### Changed
 
 - `AGENTS.md`：新增 §7「实施与改动」（简洁、精准改动）；§1 交叉引用；§7 与 OpenSpec / Superpowers 分工边界（不重复澄清、计划、TDD、change 流程）
-- `新需求开发.md`、`.agents/skills/new-feature-development/workflow.md`、`流程公共约定.md`、`README.md`：TDD 表述回归 Superpowers 推荐、非 AGENTS 重复
-- `新需求开发.md`、`需求变更.md`：改为薄入口（流程速览 + 指向 skill 的 `workflow.md`），正文唯一来源迁入对应 skill 目录
-- `.agents/skills/new-feature-development/`、`.agents/skills/requirement-change/`：设置 `disable-model-invocation: true`，仅手动调用，不自动触发
-- `README.md`：新增「项目流程 skill」介绍、使用依赖说明（安装 skill 无此前提）与通过 AI 安装的提示词；初始化提示词改为询问是否安装 skill，不主动装三项工具
-- `.agents/README.md`：登记两个流程 skill，目录结构示例补充 `workflow.md`
-- `CONTRIBUTING.md`：仓库结构表同步 skill 化调整
+- `新需求开发.md`、`流程公共约定.md`、`README.md`：TDD 表述回归 Superpowers 推荐、非 AGENTS 重复
+- `README.md`、`快速开始.md`、`CONTRIBUTING.md`、`.agents/README.md`：移除内置项目流程 skill 的安装、索引和手动调用说明；流程入口回到根目录 Markdown 文档
+- `README.md`：新增“升级已接入的 Vibe Coding Rule”提示词，指导业务项目同步新版 Vibe Coding Rule 时先 diff、确认方案再写入
+- `快速开始.md`：瘦身为场景选择导航，目录结构、初始化步骤与安装提示词统一回到 `README.md`
+- `docs/README.md`：固定 `docs/experience/` 作为经验包 Markdown 目录；调整示例结构，移除默认 `api/` 目录并将接口/API 契约变化归入 OpenSpec change
+
+### Removed
+
+- `.agents/skills/new-feature-development/`：移除新需求开发流程 skill
+- `.agents/skills/requirement-change/`：移除需求变更流程 skill
 
 ## [1.1.1] - 2026-06-10
 
