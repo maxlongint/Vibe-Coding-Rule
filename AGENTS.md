@@ -71,7 +71,7 @@
 
 ## 7. 实施与改动
 
-动手改代码时的**范围与复杂度**控制；与 §1 工程边界配合。需求澄清、任务拆解、测试优先节奏、change 生命周期等执行方法由 OpenSpec / Superpowers 及项目 skill 承担，**不在此重复**（见文末「可选增强」与规则包 `流程公共约定.md`）。
+动手改代码时的**范围与复杂度**控制；与 §1 工程边界配合。需求澄清、任务拆解、测试优先节奏、change 生命周期等执行方法由 OpenSpec / Superpowers 及项目 skill 承担，**不在此重复**（见文末「可选增强」；具体调用方式与 fallback 以团队实际采用的流程文档为准）。
 
 ### 简洁
 
@@ -100,9 +100,9 @@
 
 ---
 
-> **可选增强：** 团队可搭配推荐工具链 OpenSpec（主）/ CodeGraph / Superpowers（辅）增强需求治理与执行纪律；安装方法见规则包 README。本文件单独使用即完整自洽，未安装这些工具不影响以上任何底线。
+> **可选增强：** 团队可搭配推荐工具链 OpenSpec（主）/ CodeGraph / Superpowers（辅）增强需求治理与执行纪律；安装与使用方法按团队采用的工具文档执行。本文件单独使用即完整自洽，未安装这些工具不影响以上任何底线。
 >
-> **分工边界：** 下列内容由可选工具链与项目 skill 负责，AGENTS.md **不重复**——需求澄清（Superpowers `$brainstorming`）、任务拆解（`$writing-plans` / OpenSpec `tasks`）、TDD 实现节奏（`$test-driven-development`）、change 提案与归档（OpenSpec `/opsx:*`）。调用方式与 fallback 见规则包 `流程公共约定.md`。
+> **分工边界：** 下列内容由可选工具链与项目 skill 负责，AGENTS.md **不重复**——需求澄清（Superpowers `$brainstorming`）、任务拆解（`$writing-plans` / OpenSpec `tasks`）、TDD 实现节奏（`$test-driven-development`）、change 提案与归档（OpenSpec `/opsx:*`）。调用方式与 fallback 以团队实际采用的流程文档为准。
 >
 > 若启用 Superpowers：`$brainstorming`、`$writing-plans` 等技能产出的澄清、设计、计划回填到上文「需求可追溯」选定的**需求载体**，不与之并存为口径重复的文档。具体落点：
 > - **同时启用 OpenSpec**：载体即对应 change 目录的 `proposal` / `design` / `tasks` / `specs`，技能不再另写 `docs/superpowers/specs/` 下的设计稿或计划文件。change 目录尚未创建时，技能产出先作为创建 `proposal` / `specs` 的输入，不预先落成独立文档。
