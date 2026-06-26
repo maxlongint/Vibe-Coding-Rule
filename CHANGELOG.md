@@ -10,8 +10,10 @@
 - `新需求开发.md`、`流程公共约定.md`、`README.md`：TDD 表述回归 Superpowers 推荐、非 AGENTS 重复
 - `README.md`、`快速开始.md`、`CONTRIBUTING.md`、`.agents/README.md`：移除内置项目流程 skill 的安装、索引和手动调用说明；流程入口回到根目录 Markdown 文档
 - `README.md`：新增“升级已接入的 Vibe Coding Rule”提示词，指导业务项目同步新版 Vibe Coding Rule 时先 diff、确认方案再写入
+- `AGENTS.md`：移除对规则包根目录流程文档的具体文件名引用，避免单文件复制后形成悬空指向
 - `快速开始.md`：瘦身为场景选择导航，目录结构、初始化步骤与安装提示词统一回到 `README.md`
 - `docs/README.md`：固定 `docs/experience/` 作为经验包 Markdown 目录；调整示例结构，移除默认 `api/` 目录并将接口/API 契约变化归入 OpenSpec change
+- `.agents/README.md`：移除对根目录流程文档的相对引用，并调整空索引措辞，避免复制到业务项目后出现断链或语境偏差
 
 ### Removed
 
