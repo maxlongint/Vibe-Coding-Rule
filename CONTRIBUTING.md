@@ -18,12 +18,11 @@
 | 文件 | 性质 |
 | --- | --- |
 | `AGENTS.md` | 强制底线，复制到业务项目 |
-| `快速开始.md` | 落地选型、目录总览与初始化清单 |
+| `快速开始.md` | 落地选型与场景选择导航 |
 | `docs/README.md` | 业务项目 docs 目录说明模板（复制到业务项目） |
-| `.agents/README.md` | 业务项目 skill 目录索引模板（复制到业务项目） |
+| `.agents/README.md` | 业务项目 skill 目录索引模板（默认不内置项目级 skill，复制到业务项目） |
 | `SECURITY.md` / `CODE_OF_CONDUCT.md` | 开源社区文件 |
-| `新需求开发.md` / `需求变更.md` | 可选流程入口（正文在 `.agents/skills/` 对应 skill 的 `workflow.md`） |
-| `.agents/skills/new-feature-development/` / `.agents/skills/requirement-change/` | 流程 skill（SKILL.md 编排 + workflow.md 正文） |
+| `新需求开发.md` / `需求变更.md` | 可选流程文档，说明 OpenSpec 主流程与工具 fallback |
 | `流程公共约定.md` | 流程文档共用段落，避免重复 |
 | `README.md` | 入口说明 |
 | `CHANGELOG.md` | 规范包版本演进 |
@@ -41,7 +40,7 @@
 - **工具无关**：不绑定单一 AI 产品或第三方工具的安装前提。
 - **前后端通用**：不写特定框架实现细节。
 - **可单独使用**：复制 `AGENTS.md` 一个文件仍须完整自洽。
-- **不膨胀**：项目特有 UI/API/业务规则放业务项目 `docs/`，不写入 `AGENTS.md`。
+- **不膨胀**：项目特有架构、UI、跨需求业务规则放业务项目 `docs/`；进行中的接口/API 契约变化放需求载体，不写入 `AGENTS.md`。
 
 大改建议先开 Issue 对齐方向，再提 PR。
 
