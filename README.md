@@ -44,16 +44,12 @@ your-project/
 请为当前业务项目接入 Vibe Coding Rule。
 规范仓库：https://github.com/maxlongint/Vibe-Coding-Rule
 
-按该仓库 README「业务项目目录」完成初始化：
-1. 将 AGENTS.md 放到项目根目录；若已存在，先 diff 说明差异与合并方案，我确认后再写入。
-2. 创建 docs/，写入 docs/README.md（内容参考规范仓库 docs/README.md）。
-3. 创建 .agents/，写入 .agents/README.md（内容参考规范仓库 .agents/README.md）。
+请参考规范仓库 README，在当前项目中创建或更新：
+1. AGENTS.md
+2. docs/README.md
+3. .agents/README.md
 
-约束：
-- 只改当前业务项目，不要在规范仓库里操作。
-- 项目特有规范写进 docs/，skill 写进 .agents/skills/，不要把项目规则合并进 AGENTS.md。
-- 写入或修改项目文件前先向我申请权限；完成后列出实际创建/更新的文件路径供我核对。
-- 本次不主动安装 OpenSpec、CodeGraph、Superpowers；若需要项目级 skill，须先询问我并等我确认。
+要求：只改当前项目；已有文件先 diff 并给出合并方案，等我确认后再写入；不要把项目特有规则写进 AGENTS.md；完成后列出实际更新文件和剩余风险。本次不安装 OpenSpec、CodeGraph、Superpowers。
 ```
 
 #### 升级已接入的 Vibe Coding Rule
@@ -64,20 +60,13 @@ your-project/
 请为当前业务项目更新已接入的 Vibe Coding Rule。
 规范仓库：https://github.com/maxlongint/Vibe-Coding-Rule
 
-请参考规范仓库最新版本，检查当前项目中与 Vibe Coding Rule 相关的文件：
+请参考规范仓库最新版本，对比当前项目中的：
 1. AGENTS.md
 2. docs/README.md
 3. .agents/README.md
-4. 其他明确来自 Vibe Coding Rule 的流程文档或模板
+4. 其他明确来自 Vibe Coding Rule 的文档或模板
 
-要求：
-- 只改当前业务项目，不要在规范仓库里操作。
-- 先读取当前项目文件和规范仓库对应文件，说明差异、建议更新项、可能影响和合并方案。
-- 等我确认方案后再写入；不要直接覆盖业务项目已有内容。
-- 保留业务项目自己的技术栈、命令、架构、业务规则、经验包索引和项目级 skill 索引。
-- 不把项目特有规则合并进 AGENTS.md；项目长期规范仍放 docs/，进行中需求仍放 OpenSpec change 或 issue/PR。
-- 若发现业务项目改过这些模板，优先保留业务项目有效口径，并把冲突列出来让我确认。
-- 完成后列出实际更新的文件路径、未更新项、验证方式和剩余风险。
+要求：只改当前项目；先说明差异、建议更新项和合并方案，等我确认后再写入；保留项目自己的技术栈、命令、架构、业务规则、经验包索引和 skill 索引；完成后列出实际更新文件、未更新项和剩余风险。
 ```
 
 ## 它管什么
