@@ -1,6 +1,7 @@
 # Vibe Coding Rule
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Version: Unreleased](https://img.shields.io/badge/Version-Unreleased%20(after%20v1.1.1)-orange)](./CHANGELOG.md)
 [![GitHub](https://img.shields.io/badge/GitHub-maxlongint%2FVibe--Coding--Rule-blue?logo=github)](https://github.com/maxlongint/Vibe-Coding-Rule)
 
 面向 AI 辅助开发的通用协作规范。**核心规范一个文件、一页纸，复制即用。**

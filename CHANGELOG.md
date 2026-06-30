@@ -6,6 +6,7 @@
 
 ### Changed
 
+- `AGENTS.md`、`README.md`：新增版本提示，方便已接入项目判断是否需要同步新版 Vibe Coding Rule
 - `AGENTS.md`：新增 §7「实施与改动」（简洁、精准改动）；§1 交叉引用；§7 与 OpenSpec / Superpowers 分工边界（不重复澄清、计划、TDD、change 流程）
 - `新需求开发.md`、`流程公共约定.md`、`README.md`：TDD 表述回归 Superpowers 推荐、非 AGENTS 重复
 - `README.md`、`快速开始.md`、`CONTRIBUTING.md`、`.agents/README.md`：移除内置项目流程 skill 的安装、索引和手动调用说明；流程入口回到根目录 Markdown 文档

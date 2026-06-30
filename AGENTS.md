@@ -1,5 +1,9 @@
 # AGENTS.md
 
+> Vibe Coding Rule 版本：Unreleased（最近发布：v1.1.1）
+> 上游仓库：https://github.com/maxlongint/Vibe-Coding-Rule
+> 更新记录：CHANGELOG.md
+
 面向 AI 辅助开发的协作规范。**复制本文件到项目根目录即可使用**，不依赖任何特定工具或插件，适用于前端、后端、全栈、脚本等项目。
 
 - **项目规范放哪**：长期有效的技术栈、框架、命令、UI/API、业务约定等，**统一写在项目 `docs/` 下**（索引用 `docs/README.md`），不写进 `AGENTS.md`，也不拆到各 AI 工具自有配置里。进行中的需求变更放 `openspec/changes/`（启用 OpenSpec 时）或 issue/PR（未启用时），与 `docs/` 分工见 `docs/README.md`。
