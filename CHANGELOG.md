@@ -4,10 +4,13 @@
 
 ## [Unreleased]
 
+## [1.1.2] - 2026-07-01
+
 ### Changed
 
+- `AGENTS.md`：§7 新增「目标变更与非目标不变式」，约束不得通过改变非目标行为间接制造「完成效果」，并补充完成后的不变式核对要求
 - `AGENTS.md`、`README.md`：新增版本提示，方便已接入项目判断是否需要同步新版 Vibe Coding Rule
-- `AGENTS.md`：新增 §7「实施与改动」（简洁、精准改动）；§1 交叉引用；§7 与 OpenSpec / Superpowers 分工边界（不重复澄清、计划、TDD、change 流程）
+- `AGENTS.md`：新增 §7「实施与改动」（简洁、目标变更与非目标不变式、精准改动）；§1 交叉引用；§7 与 OpenSpec / Superpowers 分工边界（不重复澄清、计划、TDD、change 流程）
 - `新需求开发.md`、`流程公共约定.md`、`README.md`：TDD 表述回归 Superpowers 推荐、非 AGENTS 重复
 - `README.md`、`快速开始.md`、`CONTRIBUTING.md`、`.agents/README.md`：移除内置项目流程 skill 的安装、索引和手动调用说明；流程入口回到根目录 Markdown 文档
 - `README.md`：新增“升级已接入的 Vibe Coding Rule”提示词，指导业务项目同步新版 Vibe Coding Rule 时先 diff、确认方案再写入
@@ -58,6 +61,8 @@
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
+[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.2...HEAD
+[1.1.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/maxlongint/Vibe-Coding-Rule/releases/tag/v1.0.0

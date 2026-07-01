@@ -1,7 +1,7 @@
 # Vibe Coding Rule
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version: Unreleased](https://img.shields.io/badge/Version-Unreleased%20(after%20v1.1.1)-orange)](./CHANGELOG.md)
+[![Version: v1.1.2](https://img.shields.io/badge/Version-v1.1.2-blue)](./CHANGELOG.md)
 [![GitHub](https://img.shields.io/badge/GitHub-maxlongint%2FVibe--Coding--Rule-blue?logo=github)](https://github.com/maxlongint/Vibe-Coding-Rule)
 
 面向 AI 辅助开发的通用协作规范。**核心规范一个文件、一页纸，复制即用。**
@@ -81,7 +81,7 @@ your-project/
 5. 未经明确要求不 commit / push / deploy
 6. 拿不准就停下来问
 
-展开章节含 **§7 实施与改动**（简洁、精准改动；属展开层，非速查底线）。澄清、任务拆解、TDD 等执行方法由 OpenSpec / Superpowers 承担，见 [`流程公共约定.md`](./流程公共约定.md)。
+展开章节含 **§7 实施与改动**（简洁、目标变更与非目标不变式、精准改动；属展开层，非速查底线）。澄清、任务拆解、TDD 等执行方法由 OpenSpec / Superpowers 承担，见 [`流程公共约定.md`](./流程公共约定.md)。
 
 ## 它不管什么
 
