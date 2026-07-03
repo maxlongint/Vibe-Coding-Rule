@@ -18,7 +18,8 @@
 your-project/
 ├── AGENTS.md                 # 从本仓库复制：AI 协作通用底线
 ├── docs/                     # 项目规范（长期约定）；索引用 docs/README.md
-│   └── README.md             # 可从本仓库 docs/README.md 复制
+│   ├── README.md             # 可从本仓库 docs/README.md 复制
+│   └── 规范/                 # 可从本仓库 docs/规范/ 复制通用规范模板
 ├── .agents/                  # 项目 skill（按需，随仓库共享）
 │   ├── README.md             # skill 目录索引；可从本仓库 .agents/README.md 复制
 │   └── skills/
@@ -33,7 +34,7 @@ your-project/
 ### 初始化步骤
 
 1. 复制 [`AGENTS.md`](./AGENTS.md) 到业务项目根目录（若已有，先 diff 再合并）。
-2. 创建 `docs/`，复制 [`docs/README.md`](./docs/README.md) 作目录说明与索引。
+2. 创建 `docs/`，复制本仓库 [`docs/`](./docs/) 下的通用规范模板（至少包含 [`docs/README.md`](./docs/README.md)）。
 3. 创建 `.agents/`，复制 [`.agents/README.md`](./.agents/README.md) 作 skill 索引；有团队自定义或第三方 skill 时，再放入 `.agents/skills/`。
 4. 不确定流程深度？看 [`快速开始.md`](./快速开始.md) 三种场景；启用 OpenSpec 再按 [`新需求开发.md`](./新需求开发.md) 操作。
 
@@ -47,7 +48,7 @@ your-project/
 
 请参考规范仓库 README，在当前项目中创建或更新：
 1. AGENTS.md
-2. docs/README.md
+2. docs/（复制或合并规范仓库 docs/ 下的通用规范模板）
 3. .agents/README.md
 
 要求：只改当前项目；已有文件先 diff 并给出合并方案，等我确认后再写入；不要把项目特有规则写进 AGENTS.md；完成后列出实际更新文件和剩余风险。本次不安装 OpenSpec、CodeGraph、Superpowers。
@@ -63,7 +64,7 @@ your-project/
 
 请参考规范仓库最新版本，对比当前项目中的：
 1. AGENTS.md
-2. docs/README.md
+2. docs/（包含 docs/README.md 及 docs/ 下明确来自 Vibe Coding Rule 的通用规范模板）
 3. .agents/README.md
 4. 其他明确来自 Vibe Coding Rule 的文档或模板
 
