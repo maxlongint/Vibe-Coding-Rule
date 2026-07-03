@@ -4,6 +4,17 @@
 
 ## [Unreleased]
 
+## [1.1.3] - 2026-07-03
+
+### Added
+
+- `docs/规范/代码设计原则.md`：新增通用代码设计原则模板，覆盖 KISS、YAGNI、DRY、关注点分离、高内聚低耦合、最小惊讶原则及抽象判断清单
+
+### Changed
+
+- `新需求开发.md`：更新新需求开发步骤，使用 `<change-id>` 占位符，新增默认 worktree + 独立分支隔离、隔离工作区内影响分析、验证后集成回主工作区，再归档
+- `README.md`、`docs/README.md`：补充代码设计原则模板入口，并同步版本提示
+
 ## [1.1.2] - 2026-07-01
 
 ### Changed
@@ -61,7 +72,8 @@
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
-[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.2...HEAD
+[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.3...HEAD
+[1.1.3]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.2...v1.1.3
 [1.1.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.0.0...v1.1.0

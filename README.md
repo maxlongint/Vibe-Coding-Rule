@@ -1,7 +1,7 @@
 # Vibe Coding Rule
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version: v1.1.2](https://img.shields.io/badge/Version-v1.1.2-blue)](./CHANGELOG.md)
+[![Version: v1.1.3](https://img.shields.io/badge/Version-v1.1.3-blue)](./CHANGELOG.md)
 [![GitHub](https://img.shields.io/badge/GitHub-maxlongint%2FVibe--Coding--Rule-blue?logo=github)](https://github.com/maxlongint/Vibe-Coding-Rule)
 
 面向 AI 辅助开发的通用协作规范。**核心规范一个文件、一页纸，复制即用。**
@@ -34,7 +34,7 @@ your-project/
 ### 初始化步骤
 
 1. 复制 [`AGENTS.md`](./AGENTS.md) 到业务项目根目录（若已有，先 diff 再合并）。
-2. 创建 `docs/`，复制本仓库 [`docs/`](./docs/) 下的通用规范模板（至少包含 [`docs/README.md`](./docs/README.md)）。
+2. 创建 `docs/`，复制本仓库 [`docs/`](./docs/) 下的通用规范模板（至少包含 [`docs/README.md`](./docs/README.md)；按需包含 [`docs/规范/代码设计原则.md`](./docs/规范/代码设计原则.md)）。
 3. 创建 `.agents/`，复制 [`.agents/README.md`](./.agents/README.md) 作 skill 索引；有团队自定义或第三方 skill 时，再放入 `.agents/skills/`。
 4. 不确定流程深度？看 [`快速开始.md`](./快速开始.md) 三种场景；启用 OpenSpec 再按 [`新需求开发.md`](./新需求开发.md) 操作。
 
@@ -92,7 +92,7 @@ your-project/
 
 只用 `AGENTS.md` 已经够用。需要更完整的需求治理与执行纪律时，推荐组合 **OpenSpec（主）+ CodeGraph + Superpowers（辅）**：OpenSpec 管需求与验收，CodeGraph 管影响分析，Superpowers 管执行方法。三者都不替代 `AGENTS.md` 底线，未安装时自动 fallback 到 issue/PR 与人工分析。
 
-开发流程见：[`新需求开发.md`](./新需求开发.md) · [`需求变更.md`](./需求变更.md) · 共用约定 [`流程公共约定.md`](./流程公共约定.md)。
+开发流程见：[`新需求开发.md`](./新需求开发.md) · [`需求变更.md`](./需求变更.md) · 共用约定 [`流程公共约定.md`](./流程公共约定.md)。代码设计取舍可参考 [`docs/规范/代码设计原则.md`](./docs/规范/代码设计原则.md)。
 
 ### 工具依赖（可选）
 

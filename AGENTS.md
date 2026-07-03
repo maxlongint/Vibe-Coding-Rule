@@ -1,6 +1,6 @@
 # AGENTS.md
 
-> Vibe Coding Rule 版本：v1.1.2
+> Vibe Coding Rule 版本：v1.1.3
 > 上游仓库：https://github.com/maxlongint/Vibe-Coding-Rule
 > 更新记录：CHANGELOG.md
 
