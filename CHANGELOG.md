@@ -6,6 +6,8 @@
 
 ### Changed
 
+- `README.md`：重写入口说明——开篇明确仓库定位与用法；接入/升级与 OpenSpec / CodeGraph / Superpowers 的 AI 安装提示词直接展开；各工具补充一行环境前提与初始化步骤；补回代码设计原则入口
+- `快速开始.md`：聚焦三档选型与工具 fallback 表；安装提示词统一引用 `README.md` §4；场景一链到 AI 接入提示词，场景三与 `docs/` 复制范围对齐
 - `新需求开发.md`、`需求变更.md`：重写为面向开发人员的 AI Chat 操作指引，统一步骤、提示词与 fallback 写法，补充 UI 两阶段流程
 - `流程公共约定.md`、`README.md`、`docs/README.md`：统一 `<change-id>` 与 `specs` 术语，补充 `/opsx:explore` 说明
 - `需求变更.md`：开篇与第 1 步补充「主流程在 AI Chat、终端 CLI 可辅助」说明
