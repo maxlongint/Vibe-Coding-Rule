@@ -4,6 +4,14 @@
 
 ## [Unreleased]
 
+### Changed
+
+- `新需求开发.md`、`需求变更.md`：重写为面向开发人员的 AI Chat 操作指引，统一步骤、提示词与 fallback 写法，补充 UI 两阶段流程
+- `流程公共约定.md`、`README.md`、`docs/README.md`：统一 `<change-id>` 与 `specs` 术语，补充 `/opsx:explore` 说明
+- `需求变更.md`：开篇与第 1 步补充「主流程在 AI Chat、终端 CLI 可辅助」说明
+- `docs/README.md`、`AGENTS.md`：「进行中需求」用语与表格、目录说明对齐
+- `CHANGELOG.md`：修正 v1.1.3 中未落地的 worktree 描述
+
 ## [1.1.3] - 2026-07-03
 
 ### Added
@@ -12,7 +20,7 @@
 
 ### Changed
 
-- `新需求开发.md`：更新新需求开发步骤，使用 `<change-id>` 占位符，新增默认 worktree + 独立分支隔离、隔离工作区内影响分析、验证后集成回主工作区，再归档
+- `新需求开发.md`：更新新需求开发步骤，使用 `<change-id>` 占位符
 - `README.md`、`docs/README.md`：补充代码设计原则模板入口，并同步版本提示
 
 ## [1.1.2] - 2026-07-01

@@ -6,7 +6,7 @@
 
 面向 AI 辅助开发的协作规范。**复制本文件到项目根目录即可使用**，不依赖任何特定工具或插件，适用于前端、后端、全栈、脚本等项目。
 
-- **项目规范放哪**：长期有效的技术栈、框架、命令、UI/API、业务约定等，**统一写在项目 `docs/` 下**（索引用 `docs/README.md`），不写进 `AGENTS.md`，也不拆到各 AI 工具自有配置里。进行中的需求变更放 `openspec/changes/`（启用 OpenSpec 时）或 issue/PR（未启用时），与 `docs/` 分工见 `docs/README.md`。
+- **项目规范放哪**：长期有效的技术栈、框架、命令、UI/API、业务约定等，**统一写在项目 `docs/` 下**（索引用 `docs/README.md`），不写进 `AGENTS.md`，也不拆到各 AI 工具自有配置里。进行中的需求放 `openspec/changes/`（启用 OpenSpec 时）或 issue/PR（未启用时），与 `docs/` 分工见 `docs/README.md`。
 - **自定义 skill 放哪**：项目级 skill **统一放在 `.agents/skills/<skill-name>/`**，入口文件为 `SKILL.md`（可按需附带脚本或参考文档）；**`.agents/README.md` 是所有 skill 技能包的目录索引**，新增或移除 skill 时同步更新。随仓库共享给团队，不写进 `docs/` 或 `AGENTS.md`。个人全局 skill 放用户目录，不作为项目规范。
 - **别动本文件**：**AI 未经用户明确要求，不得擅自修改 `AGENTS.md`**——不编辑、不覆盖、不顺手改写，也不把项目规则合并进来。
 

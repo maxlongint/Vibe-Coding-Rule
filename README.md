@@ -25,8 +25,8 @@ your-project/
 │   └── skills/
 │       └── <skill-name>/     # 可选：团队自定义或第三方 skill
 │           └── SKILL.md
-└── openspec/                 # 仅启用 OpenSpec 时：进行中需求变更
-    └── changes/<change-name>/
+└── openspec/                 # 仅启用 OpenSpec 时：进行中需求
+    └── changes/<change-id>/
 ```
 
 `docs/` 放稳定规范；`openspec/changes/` 放进行中需求（未启用 OpenSpec 则用 issue/PR）。详见 [`docs/README.md`](./docs/README.md)。
@@ -36,7 +36,7 @@ your-project/
 1. 复制 [`AGENTS.md`](./AGENTS.md) 到业务项目根目录（若已有，先 diff 再合并）。
 2. 创建 `docs/`，复制本仓库 [`docs/`](./docs/) 下的通用规范模板（至少包含 [`docs/README.md`](./docs/README.md)；按需包含 [`docs/规范/代码设计原则.md`](./docs/规范/代码设计原则.md)）。
 3. 创建 `.agents/`，复制 [`.agents/README.md`](./.agents/README.md) 作 skill 索引；有团队自定义或第三方 skill 时，再放入 `.agents/skills/`。
-4. 不确定流程深度？看 [`快速开始.md`](./快速开始.md) 三种场景；启用 OpenSpec 再按 [`新需求开发.md`](./新需求开发.md) 操作。
+4. 不确定流程深度？看 [`快速开始.md`](./快速开始.md) 三种场景；启用 OpenSpec 后，新需求按 [`新需求开发.md`](./新需求开发.md)，需求变更按 [`需求变更.md`](./需求变更.md) 操作。
 
 #### 在业务项目中接入 Vibe Coding Rule
 
@@ -100,7 +100,7 @@ your-project/
 
 | 工具 | 在使用中的角色 | 在流程中的用途 | 未安装时的 fallback |
 | --- | --- | --- | --- |
-| **OpenSpec** | **主（核心）** | `openspec/changes/` 承载需求；`/opsx:propose` / `apply` / `sync` / `archive`；`openspec validate` / `archive` CLI | 用 issue、PR、任务卡承载 proposal / spec / tasks / 验收 |
+| **OpenSpec** | **主（核心）** | `openspec/changes/` 承载需求；`/opsx:propose` / `apply` / `sync` / `archive`；`openspec validate` / `archive` CLI | 用 issue、PR、任务卡承载 proposal / specs / tasks / 验收 |
 | **CodeGraph** | **辅（影响分析步骤）** | `codegraph_explore` / `callers` / `callees` / `impact` 做影响分析与回归范围评估 | AI 人工通读相关源码与测试，并记录未覆盖范围 |
 | **Superpowers** | **辅（执行方法步骤）** | `$brainstorming` 澄清；`$writing-plans` 拆任务；`$test-driven-development` 实现（推荐）；`$verification-before-completion` 核对验证证据 | 手动澄清、按 tasks 推进、完成前自行核对验证证据 |
 
