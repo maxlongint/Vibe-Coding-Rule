@@ -4,8 +4,11 @@
 
 ## [Unreleased]
 
+## [1.1.4] - 2026-07-15
+
 ### Changed
 
+- `AGENTS.md`：明确项目规范与项目级 skill 按需创建目录；补充需求留痕载体、需求性质决策与 OpenSpec 显式授权门禁；澄清可选工具未启用时的执行边界
 - `README.md`：可选工具链改为「安装」与（仅 OpenSpec / CodeGraph）「初始化」两段 AI 提示词；注明 Superpowers 无项目级初始化；重启表标题改为覆盖「仅安装」情形；安装前提标明本仓库推荐；§2 注明流程文档在本规范仓库查阅
 - `快速开始.md`：场景三区分 OpenSpec / CodeGraph 需初始化，并链到 `README.md` §4 的重启说明
 - `README.md`：重写入口说明——开篇明确仓库定位与用法；接入/升级与 OpenSpec / CodeGraph / Superpowers 的 AI 安装提示词直接展开；补回代码设计原则入口
@@ -84,7 +87,8 @@
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
-[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.3...HEAD
+[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.4...HEAD
+[1.1.4]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.3...v1.1.4
 [1.1.3]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.2...v1.1.3
 [1.1.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.0...v1.1.1
