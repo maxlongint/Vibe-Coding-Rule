@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-07-16
+
 ### Changed
 
 - `AGENTS.md`：等义压缩重复规则与需求性质决策表，保留单文件可用的六条底线、需求/验证/权限门禁和非目标不变式；不再承载可选工具规则
@@ -103,7 +105,8 @@
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
-[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.4...HEAD
+[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.4...v2.0.0
 [1.1.4]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.3...v1.1.4
 [1.1.3]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.2...v1.1.3
 [1.1.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.1...v1.1.2
