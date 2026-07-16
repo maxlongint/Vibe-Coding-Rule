@@ -1,7 +1,7 @@
 # Vibe Coding Rule
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version: v2.0.0](https://img.shields.io/badge/Version-v2.0.0-blue)](./CHANGELOG.md)
+[![Version: v2.1.0](https://img.shields.io/badge/Version-v2.1.0-blue)](./CHANGELOG.md)
 [![GitHub](https://img.shields.io/badge/GitHub-maxlongint%2FVibe--Coding--Rule-blue?logo=github)](https://github.com/maxlongint/Vibe-Coding-Rule)
 
 **一套可复制到业务项目的 AI 协作规范。** 不绑定 Cursor、Claude Code 等特定工具，前后端项目都能用。
@@ -14,12 +14,12 @@
 
 | 在本仓库 | 复制到业务项目后 |
 | --- | --- |
-| 通用模板：`AGENTS.md`、`docs/`、`.agents/` | 你项目里的 AI 底线与长期约定 |
+| 通用模板：`AGENTS.md`、`docs/`、`design/README.md`、`.agents/` | 你项目里的 AI 底线、长期约定与目录说明 |
 | 可选流程文档（OpenSpec / CodeGraph / Superpowers） | 按需选用，不是必需品 |
 
 [`AGENTS.md`](./AGENTS.md) 用六条底线约束 AI：**不伪造成功 · 完成前验证 · 改行为前先记录 · 不碰敏感信息 · 不擅自提交发布 · 拿不准就问**。
 
-项目规范放 `docs/`（见 [`docs/README.md`](./docs/README.md)）；项目 skill 放 `.agents/skills/`（见 [`.agents/README.md`](./.agents/README.md)）。进行中需求放 `openspec/changes/`（启用 OpenSpec 时）或 issue / PR。
+项目规范放 `docs/`（见 [`docs/README.md`](./docs/README.md)）；UI、页面、交互和视觉设计资料放 `design/`（见 [`design/README.md`](./design/README.md)）；项目 skill 放 `.agents/skills/`（见 [`.agents/README.md`](./.agents/README.md)）。进行中需求放 `openspec/changes/`（启用 OpenSpec 时）或 issue / PR。
 
 ## 怎么用
 
@@ -33,16 +33,18 @@ your-project/
 │   └── 规范/
 │       ├── 代码设计原则.md
 │       └── 可选工具协作.md
+├── design/
+│   └── README.md                     # 完整安装：设计资料目录说明
 ├── .agents/                          # 完整安装包含，实际 skill 按需添加
 │   └── README.md                     # 完整安装：项目级 skill 索引与安装入口
 └── openspec/                         # 可选：启用 OpenSpec 时的进行中需求
 ```
 
-**最小安装：** 只复制 `AGENTS.md`；不创建 `docs/`、`.agents/`，不安装 OpenSpec、CodeGraph、Superpowers。
+**最小安装：** 只复制 `AGENTS.md`；不创建 `docs/`、`design/`、`.agents/`，不安装 OpenSpec、CodeGraph、Superpowers。
 
 **按需扩展：** 最小安装后确有长期规范时，先创建 `docs/README.md` 再添加规范文档；需要自建或安装项目级 skill 时，先创建 `.agents/README.md` 再向 `.agents/skills/` 添加实际技能包。索引只登记实际存在的内容。
 
-**完整安装（含 docs/ 全部文件）：** 创建或更新 `AGENTS.md`、递归合并 `docs/` 下全部文件，并创建或更新 `.agents/README.md`。同路径文件应合并并保留业务项目内容，尤其是 `docs/README.md` 中的项目自有索引；不得删除业务项目自行新增的文件或目录。完整安装只接入规范文件，不安装或初始化 OpenSpec、CodeGraph、Superpowers；需要工具时，由用户后续自行取用本文第 4 节的对应提示词。具体场景见 [`快速开始.md`](./快速开始.md)。
+**完整安装：** 创建或更新 `AGENTS.md`、递归合并 `docs/` 下全部文件、处理 `design/README.md`，并创建或更新 `.agents/README.md`。同路径规范文件应合并并保留业务项目内容，尤其是 `docs/README.md` 中的项目自有索引；不得删除业务项目自行新增的文件或目录。目标项目缺少 `design/README.md` 时直接创建；内容相同时保持不变；内容不同时展示差异摘要并暂停，由用户选择保留现有文件、使用规范仓库版本覆盖，或人工确认后合并。用户作出选择后，该冲突在本次安装流程中视为已处理并继续，不重复询问；后续升级仍重新比较。不得修改或删除 `design/` 下的其他文件。完整安装只接入规范和目录说明文件，不安装或初始化 OpenSpec、CodeGraph、Superpowers；需要工具时，由用户后续自行取用本文第 4 节的对应提示词。具体场景见 [`快速开始.md`](./快速开始.md)。
 
 ### 2. 日常协作
 
@@ -52,6 +54,7 @@ your-project/
 | --- | --- |
 | 约束 AI 基本行为 | 项目根目录 `AGENTS.md` |
 | 查技术栈、架构、编码约定 | 项目 `docs/` |
+| 存放 UI、页面、交互和视觉设计资料 | 项目 `design/` |
 | 新功能 / 大改动 | [`新需求开发.md`](./新需求开发.md) |
 | 改已有需求 | [`需求变更.md`](./需求变更.md) |
 | OpenSpec / CodeGraph / Superpowers 的流程与限制 | [`docs/规范/可选工具协作.md`](./docs/规范/可选工具协作.md) |
@@ -69,9 +72,14 @@ your-project/
 
 写入任何文件前，先只询问我选择哪种安装类型，并等我回答：
 1. 最小安装：只创建或更新 AGENTS.md。
-2. 完整安装：创建或更新 AGENTS.md、docs/ 下全部文件、.agents/README.md。
+2. 完整安装：创建或更新 AGENTS.md、docs/ 下全部文件和 .agents/README.md，并包含 design/README.md。
 
-获得选择后，直接按所选类型接入。最小安装只创建或更新 AGENTS.md。完整安装递归创建或更新规范仓库 docs/ 下全部文件；同路径文件先对比并合并，保留业务项目自己的规范以及 docs/README.md 中的自有索引，不得删除业务项目自行新增的文件或目录。只有无法安全合并时再询问。只改当前项目，不要把项目特有规则写进 AGENTS.md；完成后列出实际更新文件和剩余风险。
+获得选择后按所选类型接入：
+- 最小安装：仅创建或更新 AGENTS.md。
+- 完整安装：递归合并 docs/ 下全部文件，并创建或更新 .agents/README.md；保留项目已有内容和索引，不删除项目自行新增的文件。
+- 完整安装中的 design/README.md：不存在则创建，相同则不处理，不同时展示差异，由我选择保留、覆盖或合并。本次选择后继续执行，不重复询问；不得修改 design/ 下其他文件。
+
+只有 design/README.md 冲突或其他文件无法安全合并时才询问。只修改当前项目，不把项目特有规则写入 AGENTS.md；完成后列出实际更新文件和剩余风险。
 ```
 
 **升级已接入版本**：
@@ -82,14 +90,20 @@ your-project/
 
 请先识别当前项目采用最小安装还是完整安装；无法根据已有文件确定时先询问我，未经确认不要切换安装类型。
 
-再读取当前项目 AGENTS.md 中的 Vibe Coding Rule 版本，并与规范仓库最新版本比较。版本相同也继续核对当前安装类型要求的规范文件是否齐全且内容已同步；全部一致时才提示当前已是最新版本并停止。版本不同、缺失、无法识别，或要求的文件缺失、落后时，直接按最新版本升级，不先输出差异分析。
+再读取当前项目 AGENTS.md 中的 Vibe Coding Rule 版本，并与规范仓库最新版本比较。版本相同也继续核对当前安装类型要求的规范文件是否齐全且内容已同步；全部一致且没有未处理冲突时，才提示当前已是最新版本并停止。版本不同、缺失、无法识别，或要求的文件缺失、落后时，直接按最新版本升级，不先输出差异分析。
 
 请按规范仓库最新版本更新当前项目中的：
 1. AGENTS.md
 2. docs/ 下全部文件（仅完整安装）
-3. .agents/README.md（仅完整安装）
+3. 核对并按冲突规则处理 design/README.md（仅完整安装）
+4. .agents/README.md（仅完整安装）
 
-要求：按当前安装类型更新，只改当前项目。最小安装只更新 AGENTS.md，不创建或更新 docs/、.agents/。完整安装递归合并规范仓库 docs/ 下全部文件：上游存在的文件逐一创建或更新，同路径文件合并并保留项目内容，docs/README.md 必须保留项目自有索引；不得删除业务项目自行新增的文件或目录。.agents/README.md 同样保留项目 skill 索引。只有无法安全合并时再询问；完成后列出实际更新文件、未更新项和剩余风险。
+按当前安装类型更新：
+- 最小安装：仅更新 AGENTS.md，不创建或更新 docs/、design/、.agents/。
+- 完整安装：递归合并 docs/ 下全部文件，并创建或更新 .agents/README.md；保留项目已有内容和索引，不删除项目自行新增的文件。
+- 完整安装中的 design/README.md：不存在则创建，相同则不处理，不同时展示差异，由我选择保留、覆盖或合并。本次选择后继续执行，不重复询问；不得修改 design/ 下其他文件。
+
+只有 design/README.md 冲突或其他文件无法安全合并时才询问。只修改当前项目；完成后列出实际更新文件、未更新项和剩余风险。
 ```
 
 ### 4. 可选工具链（通过 AI 安装）
@@ -167,4 +181,4 @@ your-project/
 
 ## 贡献与许可
 
-贡献见 [`CONTRIBUTING.md`](./CONTRIBUTING.md)（只收跨项目通用的 AI 协作底线）。许可：[MIT](./LICENSE)，可自由复制到商业或非商业项目。
+贡献见 [`CONTRIBUTING.md`](./CONTRIBUTING.md)（只收跨项目通用的 AI 协作底线，以及可复制的目录与流程模板）。许可：[MIT](./LICENSE)，可自由复制到商业或非商业项目。

@@ -4,6 +4,18 @@
 
 ## [Unreleased]
 
+## [2.1.0] - 2026-07-17
+
+### Added
+
+- `design/README.md`：新增业务项目设计资料目录说明模板，约定 `specs/`、`ui/`、`assets/` 的用途以及与程序运行时资源的边界；普通设计文件无需维护逐文件索引
+
+### Changed
+
+- `AGENTS.md`、`docs/README.md`：明确 `docs/` 是 AI 按当前任务相关性读取的长期项目知识库，先读取索引再加载相关规范，不在每次交互中全量加载
+- `README.md`：根入口增加 `design/` 说明，完整安装包含 `design/README.md`；目标文件内容冲突时展示差异摘要并由用户选择保留、覆盖或人工确认后合并，且不修改 `design/` 下其他文件
+- `CONTRIBUTING.md`：同步设计资料目录的内容归属和维护者文件清单
+
 ## [2.0.0] - 2026-07-16
 
 ### Changed
@@ -105,7 +117,6 @@
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
-[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v2.0.0...HEAD
 [2.0.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.4...v2.0.0
 [1.1.4]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.3...v1.1.4
 [1.1.3]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.2...v1.1.3
