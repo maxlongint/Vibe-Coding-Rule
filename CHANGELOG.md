@@ -4,16 +4,30 @@
 
 ## [Unreleased]
 
+## [3.0.0] - 2026-07-21
+
 ### Changed
 
 - **Breaking**：接入方式收敛为整套规范，并将受管文件 `docs/规范/可选工具协作.md` 更名为 `docs/规范/工具协作.md`；升级须按迁移规则处理旧路径，避免两份当前工具规范并存
-- `AGENTS.md`：重组为核心规则层，明确运行环境优先级和规范自修订边界；补充既有工作保护、破坏性操作门禁、测试真实性与多级 `AGENTS.md` 作用域，并禁止工具文档、目录、配置或命令自行启用工具
-- `docs/规范/工具协作.md`：作为 OpenSpec、CodeGraph、Superpowers 采用门禁、职责、组合方式、单一需求载体、跨 Chat 和失败处理的唯一来源；区分“采用、可用、授权”，未采用工具不阻塞任务，已采用工具失败时由用户选择修复或 fallback
-- `docs/规范/UI任务重组.md`：从工具通用规则中拆出 UI 设计来源、两阶段边界、原子约束、任务基线、映射、机械核对、后续触发和旧结构修复，供 OpenSpec 与轻量载体共同引用；新需求与需求变更流程只保留场景输入、阶段动作和调用入口
-- `docs/README.md`、`docs/规范/代码设计原则.md`：精简与 `AGENTS.md`、KISS、YAGNI、DRY 重复的说明，索引改为按场景加载实际规范
-- `README.md`、`快速开始.md`、`新需求开发.md`、`需求变更.md`、`docs/README.md`：统一工具按需启用和唯一需求载体口径；OpenSpec 主流程仅在用户明确选择或当前任务已确认采用后适用，未启用时使用当前任务、issue、PR、任务卡或用户指定文档
-- `README.md`：完整接入新增根目录工作流文件，并为旧 `可选工具协作.md` 到 `工具协作.md` 的升级定义安全迁移规则，避免新旧规范并存
-- `AGENTS.md`、`docs/规范/工具协作.md`、`新需求开发.md`：新需求确认前允许在当前 Chat 临时澄清；跨 Chat 前将确认结论写入后续可重新读取的唯一持久载体，继续设计或开始实施前确保已有唯一载体，不再强制创建 OpenSpec change
+- **Breaking**：默认假定 OpenSpec、CodeGraph、Superpowers 均已成功安装；执行中需要使用却发现未安装或不可用时必须中断并指明工具，不得静默降级或改用轻量载体继续；移除“按需启用 / 未启用不阻塞”与新需求、需求变更中的“未启用 OpenSpec”分支
+- **Breaking**：进行中需求只以 OpenSpec change 为唯一载体；移除「用户可指定 issue/PR/任务卡等为唯一载体」例外。issue/PR 等仅作输入来源，确认后必须写入 change；OpenSpec 不可用时中断，不得改用它们继续
+- **Breaking**：接入受管范围收敛为 `AGENTS.md`、`docs/` 下全部文件、`design/README.md`、`.agents/README.md`；`新需求开发.md` / `需求变更.md` 仅留规范仓，不再复制到业务项目（升级时按 README 迁移说明处理业务项目残留）
+- **Breaking**：删除根目录兼容入口 `流程公共约定.md`；规则以 `docs/规范/工具协作.md` 为准；业务项目残留该文件时按 README 迁移说明处理
+- **Breaking**：删除 `快速开始.md`；入口导航改由 `README.md`「日常协作」承接；接入/升级受管清单不再包含该文件
+- **Breaking**：删除 `docs/规范/UI任务重组.md`，UI 两阶段规则并入 `docs/规范/工具协作.md` §5；升级须按 README 迁移说明处理业务项目残留，避免与 `工具协作.md` 两份 UI 规则并存
+- `AGENTS.md`：版本改为 v3.0.0；重组为核心规则层；速查「不伪造成功」澄清隔离 mock 与不得冒充真实依赖的边界；工具条款改为默认已安装与未安装中断
+- `docs/规范/工具协作.md`：作为三项工具与 UI 两阶段重组的唯一来源；补充「Superpowers 与载体优先级」与 CodeGraph 按需查询；规定阶段标题原文（顿号与“与”），禁止近义改写；明确非 UI 场景不读取 §5；删除「§6 调用方式」（由运行环境发现，不在规范中教写）
+- `新需求开发.md`、`需求变更.md`：阶段标题与工具协作规定原文对齐；关键提示词写死 Superpowers 只作方法、只回填 change、禁止平行文档与自动提交；说明开头预检 OpenSpec 的原因，以及后续用到 CodeGraph/Superpowers 时同样中断；标明仅规范仓使用
+- `docs/README.md`：索引去掉 `UI任务重组.md`；收紧工具协作按需读取范围为 §1–4 与条件读取 §5；唯一载体口径改为仅 OpenSpec change
+- `README.md`、`CONTRIBUTING.md`：统一“假定已安装 → 需要时不可用则中断”口径；规范组成与接入提示词仅含受管文件；排除工作流文档与 `规则干条.md`；「日常协作」前移为教程入口；恢复三项工具的精简安装提示词（与接入提示词分离）
+- `规则干条.md`：仅规范仓维护者速查，不接入业务项目；内容与正式文档对齐
+
+### Removed
+
+- `流程公共约定.md`：兼容入口到期移除
+- `快速开始.md`：与 README 日常协作导航重复，予以移除
+- `docs/规范/UI任务重组.md`：内容并入 `docs/规范/工具协作.md` §5 后删除
+- `docs/规范/工具协作.md` 原「§6 调用方式」及对各文档中调用方式 / §6 引用的清理
 
 ## [2.1.1] - 2026-07-20
 
@@ -142,6 +156,9 @@
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
+[3.0.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v2.1.1...v3.0.0
+[2.1.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v2.1.0...v2.1.1
+[2.1.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.4...v2.0.0
 [1.1.4]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.3...v1.1.4
 [1.1.3]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v1.1.2...v1.1.3
