@@ -1,7 +1,7 @@
 # Vibe Coding Rule
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version: v3.2.0](https://img.shields.io/badge/Version-v3.2.0-blue)](./CHANGELOG.md)
+[![Version: v3.2.1](https://img.shields.io/badge/Version-v3.2.1-blue)](./CHANGELOG.md)
 [![GitHub](https://img.shields.io/badge/GitHub-maxlongint%2FVibe--Coding--Rule-blue?logo=github)](https://github.com/maxlongint/Vibe-Coding-Rule)
 
 **一套可搭配 OpenSpec、CodeGraph、Superpowers 的完整 AI 协作规范。** 不绑定 Cursor、Claude Code 等特定 AI 工具，前后端项目都能用。
