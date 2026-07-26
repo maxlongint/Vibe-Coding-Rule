@@ -4,6 +4,21 @@
 
 ## [Unreleased]
 
+## [3.3.0] - 2026-07-27
+
+### Added
+
+- `docs/规范/前后端工程级编码规范.md`：新增前后端与 TypeScript 工程级编码规范，约束健壮、可扩展、易维护、安全且可验证的实现与评审检查项
+- `.gitattributes`：固定 Markdown 文件使用 LF 行尾，减少跨平台编辑产生的无关 diff
+
+### Changed
+
+- `AGENTS.md`：版本改为 v3.3.0；收紧新增需求写入授权表述为「用户明确指定需求意图并确认目标、范围和验收口径」；§4 澄清阶段改为「用户明确指定新增需求、需求变更或已有需求后续工作后」方可继续
+- `docs/README.md`、`docs/规范/代码设计原则.md`、`README.md`：索引与设计原则增加《前后端工程级编码规范》入口及读取顺序（先设计原则，再工程规范）
+- `README.md`、`docs/README.md`、`docs/规范/工具协作.md`、`规则干条.md`、`新增需求工作流.md`、`需求变更工作流.md`、`CONTRIBUTING.md`：同步需求承接口径，明确只有用户指定新增需求、需求变更或已有需求后续工作时才进入 OpenSpec 流程，AI 不再自行分类、要求确认或启动 OpenSpec
+- `.github/pull_request_template.md`：Breaking changes 改为显式勾选，避免默认“无”掩盖影响范围
+- `README.md`、`CHANGELOG.md`：同步版本标识
+
 ## [3.2.3] - 2026-07-24
 
 ### Changed
@@ -216,6 +231,7 @@ v3.0.0 从接入范围移除并停止维护业务项目侧的下列文件（规�
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
+[3.3.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v3.2.3...v3.3.0
 [3.2.3]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v3.2.2...v3.2.3
 [3.2.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v3.2.1...v3.2.2
 [3.2.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v3.2.0...v3.2.1

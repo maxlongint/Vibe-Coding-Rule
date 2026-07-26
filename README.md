@@ -1,7 +1,7 @@
 # Vibe Coding Rule
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version: v3.2.3](https://img.shields.io/badge/Version-v3.2.3-blue)](./CHANGELOG.md)
+[![Version: v3.3.0](https://img.shields.io/badge/Version-v3.3.0-blue)](./CHANGELOG.md)
 [![GitHub](https://img.shields.io/badge/GitHub-maxlongint%2FVibe--Coding--Rule-blue?logo=github)](https://github.com/maxlongint/Vibe-Coding-Rule)
 
 **一套可搭配 OpenSpec、CodeGraph、Superpowers 的完整 AI 协作规范。** 不绑定 Cursor、Claude Code 等特定 AI 工具，前后端项目都能用。
@@ -20,7 +20,7 @@ Vibe Coding Rule 通过可复制的行为约束、判断规则、操作流程和
 | 正式新增需求 | [`新增需求工作流.md`](./新增需求工作流.md)（仅本规范仓教程，不接入业务项目） |
 | 正式变更需求 | [`需求变更工作流.md`](./需求变更工作流.md)（仅本规范仓教程，不接入业务项目） |
 
-AI 可以识别用户内容可能构成新增需求或需求变更，但不得据此自动进入 OpenSpec 流程。用户先确认需求意图，AI 才按 [`docs/README.md`](./docs/README.md) 索引读取 [`docs/规范/工具协作.md`](./docs/规范/工具协作.md) 并继续澄清。新增需求在目标、范围和验收口径确认后，由用户主动要求创建；AI 生成 `change-id` 并检查冲突，发现同名或可能承载该需求的现有 change 时停止，否则创建。需求变更或已有需求的后续工作仍须只读查找候选，并由用户确认继续原 change / 新建关联 change；新建分支同样由创建请求授权 AI 生成 ID、检查冲突并创建。后续口径与验证结论回填同一 change，不另建平行口径；issue/PR 等只作输入来源。
+只有用户明确指定新增需求、需求变更或已有需求的后续工作，才进入对应承接流程。用户未指定时，AI 按直接授权的任务处理，不自行分类、要求确认或启动 OpenSpec。进入新增需求流程后，目标、范围和验收口径确认，再由用户主动要求创建；AI 生成 `change-id` 并检查冲突，发现同名或可能承载该需求的现有 change 时停止，否则创建。需求变更或已有需求的后续工作仍须只读查找候选，并由用户确认继续原 change / 新建关联 change；新建分支同样由创建请求授权 AI 生成 ID、检查冲突并创建。后续口径与验证结论回填同一 change，不另建平行口径；issue/PR 等只作输入来源。
 
 ## 工具链
 
@@ -43,6 +43,7 @@ your-project/                         # 业务项目接入后的示意结构（�
 │   ├── README.md                     # 项目长期规范索引
 │   └── 规范/
 │       ├── 代码设计原则.md
+│       ├── 前后端工程级编码规范.md
 │       └── 工具协作.md               # OpenSpec / CodeGraph / Superpowers；含 UI 两阶段重组
 ├── design/
 │   └── README.md                     # UI、页面、交互和视觉资料说明
@@ -51,7 +52,7 @@ your-project/                         # 业务项目接入后的示意结构（�
 └── openspec/                         # 由 OpenSpec 在业务项目中生成；本规范仓不含
 ```
 
-[`AGENTS.md`](./AGENTS.md) 承载每次 Chat 都需要知道的规则，用六条底线约束 AI，并负责需求识别、用户确认与 `docs/` 按需路由：**不伪造成功 · 完成前验证 · 改行为前先记录 · 不碰敏感信息 · 不擅自制造外部副作用 · 拿不准就问**。
+[`AGENTS.md`](./AGENTS.md) 承载每次 Chat 都需要知道的规则，用六条底线约束 AI，并负责需求授权判断、用户确认与 `docs/` 按需路由：**不伪造成功 · 完成前验证 · 改行为前先记录 · 不碰敏感信息 · 不擅自制造外部副作用 · 拿不准就问**。
 
 项目长期知识与条件化流程放 `docs/`，由 [`docs/README.md`](./docs/README.md) 按需索引，不在每个 Chat 中全量读取；UI、页面、交互和视觉资料放 `design/`（见 [`design/README.md`](./design/README.md)）；项目 skill 放 `.agents/skills/`（见 [`.agents/README.md`](./.agents/README.md)）。只有用户明确确认的新增需求或需求变更才启用 OpenSpec，后续继续使用用户确认的同一 change（issue/PR 等仅作输入来源）。
 
