@@ -4,6 +4,29 @@
 
 ## [Unreleased]
 
+## [4.0.0] - 2026-08-02
+
+### Changed
+
+- **Breaking**：工具模型从 OpenSpec、CodeGraph、Superpowers 三工具收敛为 OpenSpec + Serena。OpenSpec 作为规格与变更制品层，Serena 作为强制代码语义工具层；移除 CodeGraph 与 Superpowers 的默认安装假定、职责表述、安装提示词和工作流依赖。
+- **Breaking**：需要理解既有代码结构、符号关系、引用、调用影响、诊断或进行语义编辑时，必须优先使用 Serena 取证或操作；Serena 不可用时中断依赖代码语义的流程，不得用 CodeGraph、纯文本搜索或旧工具冒充同等能力。
+- `AGENTS.md`：版本改为 v4.0.0；工具与跨 Chat 路由改为 OpenSpec + Serena；明确 Serena memory、shell 与编辑能力不得替代 OpenSpec、项目规范、验证结论或用户授权。
+- `docs/规范/工具协作.md`：重写为 OpenSpec 与 Serena 两层模型，明确 OpenSpec 负责规格与变更制品，Serena 负责代码语义检索、符号关系、诊断和语义编辑；UI 两阶段任务重组移至 §6。
+- `README.md`、`docs/README.md`、`CONTRIBUTING.md`、`.agents/README.md`、`规则干条.md`：同步 OpenSpec + Serena 定位、安装来源、受管接入提示词和维护口径。
+- `新增需求工作流.md`、`需求变更工作流.md`：移除 Superpowers `brainstorming` 方法调用，改为普通澄清流程；涉及既有代码结构、实现位置、影响范围、诊断或语义编辑时要求使用 Serena 取得代码事实证据。
+
+### Migration
+
+从 v3.x 升级到 v4.0.0 时，业务项目须同步更新受管文件 `AGENTS.md`、`docs/`、`design/README.md` 和 `.agents/README.md`。若业务项目中仍保留 CodeGraph 或 Superpowers 作为项目规范默认依赖，应删除或改写为项目自有补充规则，不得与 v4 的 OpenSpec + Serena 强制口径并存。
+
+需要检查并处理：
+
+1. 删除或改写接入文档、安装提示词和工具协作文档中对 CodeGraph、Superpowers 的默认依赖表述；
+2. 安装并接入 Serena，完成当前 AI 工具侧 MCP 接入，以及当前项目所需的激活或初始化；
+3. 将依赖代码结构、符号关系、引用、诊断或语义编辑的流程改为使用 Serena 取证或操作；
+4. 确认 OpenSpec change 仍是进行中需求、范围、验收、设计、任务和变化记录的唯一载体；
+5. 若旧文档引用 `docs/规范/工具协作.md` §5 作为 UI 两阶段规则，升级后改为 §6。
+
 ## [3.3.0] - 2026-07-27
 
 ### Added
@@ -231,6 +254,7 @@ v3.0.0 从接入范围移除并停止维护业务项目侧的下列文件（规�
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
+[4.0.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v3.3.0...v4.0.0
 [3.3.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v3.2.3...v3.3.0
 [3.2.3]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v3.2.2...v3.2.3
 [3.2.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v3.2.1...v3.2.2

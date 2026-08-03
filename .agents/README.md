@@ -28,4 +28,4 @@ npx skills add <owner/repo@skill-name>   # 项目级，装到 ./.agents/skills/
 npx skills add <owner/repo@skill-name> -g   # 个人全局，装到用户目录，不写入本仓库
 ```
 
-**与 Superpowers 的区别**：Superpowers 是用户级执行方法库，按官方说明安装到 AI 工具用户目录；本项目 `.agents/skills/` 只承载**随仓库共享**的项目 skill。
+**与 Serena 的区别**：Serena 是接入 AI 工具的代码语义工具层；本项目 `.agents/skills/` 只承载**随仓库共享**的项目 skill。
