@@ -4,6 +4,22 @@
 
 ## [Unreleased]
 
+### Changed
+
+- `AGENTS.md`、`README.md`、`CONTRIBUTING.md`、`规则干条.md`：将 OpenSpec + Serena 表述改为中性的职责分工，避免在接入规则中点名版本或声称工具默认已安装。
+- `AGENTS.md`、`README.md`、`CONTRIBUTING.md`、`规则干条.md`：明确只维护 OpenSpec + Serena 的完整接入方式，不提供 Lite、单文件复制、可选工具替代或部分接入分支。
+- `.github/pull_request_template.md`：补充禁止新增 Lite、单文件复制、可选工具替代或部分接入分支的核对项。
+- `AGENTS.md`、`README.md`、`规则干条.md`：补充工具触发和不可用边界，要求 OpenSpec / Serena 不可用时只中断依赖该工具的部分，不得用轻量载体、纯文本搜索、旧工具输出或模型猜测冒充同等证据。
+- `AGENTS.md`、`README.md`、`规则干条.md`：补充直接授权的小改动若实施中发现会改变外部行为、接口、数据、权限、流程或验收，应先停止并回到 OpenSpec 承接流程。
+- `AGENTS.md`、`README.md`、`规则干条.md`：补充完成汇报最小字段，涉及外部状态或难恢复操作时必须说明授权来源和实际结果。
+- `README.md`：补充普通任务、OpenSpec 承接和 Serena 取证的三步工作方式；将工具说明调整为前置准备，澄清接入动作不自动安装工具。
+- `AGENTS.md`：移除 OpenSpec 创建与承接的步骤化流程说明，保留常驻授权原则、载体边界和冲突停止条件；具体使用方法由工作流教程提示词承接。
+- `AGENTS.md`、`规则干条.md`：将“外部副作用”改为“外部状态 / 难恢复操作”，明确提交、推送、发布、部署、归档、写生产、外部通信和付费操作的授权边界。
+- `AGENTS.md`、`CONTRIBUTING.md`、`规则干条.md`、`新增需求工作流.md`、`需求变更工作流.md`：移除 `AGENTS.md` 中的 UI 两阶段任务重组规则，由工作流教程提示词承接设计源、mock 边界、任务映射和验证核对要求。
+- `新增需求工作流.md`、`需求变更工作流.md`：实现和验证提示词补充 Serena 项目上下文证据回填；阶段 1 输出改为说明本地验收命令，只有用户明确要求时才提供本地预览方式。
+- `需求变更工作流.md`：区分用户已提供 `change-id` 与未提供 `change-id` 的承接路径；明确变化记录默认追加到 `design.md`「变化记录」章节，已有专门位置时沿用并说明。
+- `.github/pull_request_template.md`：补充 v4 规范包核对项，覆盖受管范围、索引、Migration、旧工具残留、OpenSpec / Serena 边界和 UI 两阶段规则。
+
 ## [4.0.0] - 2026-08-02
 
 ### Changed
@@ -11,7 +27,7 @@
 - **Breaking**：工具模型从 OpenSpec、CodeGraph、Superpowers 三工具收敛为 OpenSpec + Serena。OpenSpec 作为规格与变更制品层，Serena 作为强制代码语义工具层；移除 CodeGraph 与 Superpowers 的默认安装假定、职责表述、安装提示词和工作流依赖。
 - **Breaking**：需要理解既有代码结构、符号关系、引用、调用影响、诊断或进行语义编辑时，必须优先使用 Serena 取证或操作；Serena 不可用时中断依赖代码语义的流程，不得用 CodeGraph、纯文本搜索或旧工具冒充同等能力。
 - `AGENTS.md`：版本改为 v4.0.0；工具与跨 Chat 路由改为 OpenSpec + Serena；明确 Serena memory、shell 与编辑能力不得替代 OpenSpec、项目规范、验证结论或用户授权。
-- `docs/规范/工具协作.md`：重写为 OpenSpec 与 Serena 两层模型，明确 OpenSpec 负责规格与变更制品，Serena 负责代码语义检索、符号关系、诊断和语义编辑；UI 两阶段任务重组移至 §6。
+- `docs/规范/工具协作.md`：删除；原则性的工具失败处理、OpenSpec / Serena 边界和证据回填收回 `AGENTS.md`；UI 两阶段任务重组规则由工作流教程提示词承接，避免业务项目接入后出现平行流程入口。
 - `README.md`、`docs/README.md`、`CONTRIBUTING.md`、`.agents/README.md`、`规则干条.md`：同步 OpenSpec + Serena 定位、安装来源、受管接入提示词和维护口径。
 - `新增需求工作流.md`、`需求变更工作流.md`：移除 Superpowers `brainstorming` 方法调用，改为普通澄清流程；涉及既有代码结构、实现位置、影响范围、诊断或语义编辑时要求使用 Serena 取得代码事实证据。
 
@@ -21,11 +37,11 @@
 
 需要检查并处理：
 
-1. 删除或改写接入文档、安装提示词和工具协作文档中对 CodeGraph、Superpowers 的默认依赖表述；
+1. 删除或改写接入文档、安装提示词和旧工具协作文档中对 CodeGraph、Superpowers 的默认依赖表述；
 2. 安装并接入 Serena，完成当前 AI 工具侧 MCP 接入，以及当前项目所需的激活或初始化；
 3. 将依赖代码结构、符号关系、引用、诊断或语义编辑的流程改为使用 Serena 取证或操作；
 4. 确认 OpenSpec change 仍是进行中需求、范围、验收、设计、任务和变化记录的唯一载体；
-5. 若旧文档引用 `docs/规范/工具协作.md` §5 作为 UI 两阶段规则，升级后改为 §6。
+5. 删除业务项目残留的 `docs/规范/工具协作.md`，并确认工具边界已由新版 `AGENTS.md` 承接，UI 两阶段任务重组规则已由工作流教程提示词承接。
 
 ## [3.3.0] - 2026-07-27
 

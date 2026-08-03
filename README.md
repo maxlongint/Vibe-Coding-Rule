@@ -24,12 +24,21 @@ Vibe Coding Rule 通过可复制的行为约束、判断规则和项目模板，
 
 ## 工具链
 
-接入本规范包后，默认假定 OpenSpec 与 Serena 已安装并完成当前项目和当前 AI 工具侧接入。仅在当前任务确实需要某项工具时检查可用性；需要使用却不可用时中断并指明工具名，不静默降级、不擅自安装。职责、边界与失败处理以 [`AGENTS.md`](./AGENTS.md) 为准。
+本规范只维护 OpenSpec + Serena 的完整协作路线：OpenSpec 承载确认后的需求、设计、任务和验证记录，Serena 提供当前项目的代码语义证据与语义编辑能力。不提供 Lite、单文件复制、可选工具替代或部分接入分支。
+
+接入本规范包不会自动安装工具；正式协作前应完成当前项目和当前 AI 工具侧接入。职责、边界与失败处理以 [`AGENTS.md`](./AGENTS.md) 为准。
 
 官方来源（命令以当前文档为准）：
 
 - OpenSpec：<https://github.com/Fission-AI/OpenSpec>
 - Serena：<https://github.com/oraios/serena>
+
+## v4 工作方式
+
+1. 普通问答、只读分析、仓库状态检查和用户直接授权的小改动，按当前请求处理，不自动创建或查找 OpenSpec；若实施中发现会改变外部行为、接口、数据、权限、流程或验收，先停止并确认承接方向。
+2. 用户明确指定新增需求、需求变更或已有需求后续时，按 `AGENTS.md` 的授权顺序进入 OpenSpec；确认后的目标、范围、设计、任务和验证结果只回填同一个 change。
+3. 涉及既有代码结构、符号关系、引用、调用影响、诊断或语义编辑时，先确认 Serena 处于当前项目上下文，再用 Serena 取得证据；Serena 不可用时中断依赖代码语义证据的部分，不用纯文本搜索或模型猜测冒充同等结论。
+4. 完成实现或验证后，说明实际改变、已核对的不变式、验证证据、未验证项、剩余风险；涉及外部状态时说明授权来源和实际结果。
 
 ## 规范组成
 
@@ -54,7 +63,7 @@ your-project/                         # 业务项目接入后的示意结构（�
 
 ## 接入业务项目
 
-本项目只提供一套完整接入方式：创建或更新 `AGENTS.md`，递归合并 `docs/` 下全部文件，处理 `design/README.md`，并创建或更新 `.agents/README.md`。
+本项目只提供一套完整接入方式：创建或更新 `AGENTS.md`，递归合并 `docs/` 下全部文件，处理 `design/README.md`，并创建或更新 `.agents/README.md`。不要拆成 Lite、单文件或部分工具接入。
 
 接入时应保留业务项目已有内容和索引，不删除项目自行新增的文件或目录。同路径规范文件应合并；`AGENTS.md` 或 `design/README.md` 不存在时创建，内容相同时保持不变，内容不同时展示差异摘要并暂停，由用户选择保留、覆盖或合并。不得修改或删除 `design/` 下其他文件。
 
@@ -65,8 +74,9 @@ your-project/                         # 业务项目接入后的示意结构（�
 规范仓库：https://github.com/maxlongint/Vibe-Coding-Rule
 
 只处理受管文件：AGENTS.md、docs/ 下全部文件、design/README.md、.agents/README.md。保留项目自有内容与索引；不复制其他文件。
+本项目只接受完整接入，不拆成 Lite、单文件或部分工具接入。
 design/README.md：不存在则创建，相同跳过，不同则展示差异并由我选择；不得改 design/ 下其余文件。
-默认 OpenSpec 与 Serena 已安装并完成当前项目和当前 AI 工具侧接入；需要用却不可用时中断并指明工具，勿自动安装或静默降级。
+本规范使用 OpenSpec 与 Serena 分别承载需求记录和代码语义证据；状态异常时中断并指明阻塞点，勿自动安装或静默降级。
 完成后列出实际更新、未更新项和剩余风险。
 ```
 
@@ -79,14 +89,14 @@ design/README.md：不存在则创建，相同跳过，不同则展示差异并�
 规范仓库：https://github.com/maxlongint/Vibe-Coding-Rule
 
 比对 AGENTS.md 中的版本与规范仓最新版；同版本仍核对受管文件是否齐全一致，一致则说明已是最新。
-需要升级时：先阅读规范仓 CHANGELOG.md 中当前版本之后、目标版本及之前各版本的 Migration，依次完成受管文件改名、删除和接入范围迁移；再只合并 AGENTS.md、docs/、design/README.md、.agents/README.md；保留项目自有内容；不复制非受管文件。
+需要升级时：先阅读规范仓 CHANGELOG.md 中当前版本之后、目标版本及之前各版本的 Migration，依次完成受管文件改名、删除和接入范围迁移；再只合并 AGENTS.md、docs/、design/README.md、.agents/README.md；保留项目自有内容；不复制非受管文件，不拆成 Lite、单文件或部分工具接入。
 design/README.md 与 AGENTS.md：不存在则创建，相同跳过，不同则展示差异并由我选择；不得改 design/ 下其余文件。
-默认 OpenSpec 与 Serena 已安装并完成当前项目和当前 AI 工具侧接入；需要用却不可用时中断并指明工具。完成后列出更新、迁移、删除、未更新项和剩余风险。
+本规范使用 OpenSpec 与 Serena 分别承载需求记录和代码语义证据；状态异常时中断并指明阻塞点。完成后列出更新、迁移、删除、未更新项和剩余风险。
 ```
 
-## 工具安装（首次或修复时）
+## 工具准备
 
-接入规范包**不会**安装 OpenSpec 或 Serena。尚未安装，或协作中被告知某项不可用时，把对应提示词发给 AI。
+接入规范包**不会**安装 OpenSpec 或 Serena。首次准备协作环境时，把对应提示词发给 AI。
 
 **OpenSpec**（需 CLI + 当前项目初始化 + AI 侧接入）：
 
