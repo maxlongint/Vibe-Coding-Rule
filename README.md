@@ -4,9 +4,9 @@
 [![Version: v4.0.0](https://img.shields.io/badge/Version-v4.0.0-blue)](./CHANGELOG.md)
 [![GitHub](https://img.shields.io/badge/GitHub-maxlongint%2FVibe--Coding--Rule-blue?logo=github)](https://github.com/maxlongint/Vibe-Coding-Rule)
 
-**一套可搭配 OpenSpec 与 Serena 的完整 AI 协作规范。** 不绑定 Cursor、Claude Code 等特定 AI 工具，前后端项目都能用。
+**一套可搭配 OpenSpec 与 Serena 的 AI 协作规范。** 不绑定特定 AI 工具，前后端项目都能用。
 
-Vibe Coding Rule 通过可复制的行为约束、判断规则、操作流程和项目模板，约定 AI 与开发者在需求澄清、影响分析、实现、验证和交付中的协作方式。它属于规范与流程层，不是自动执行策略、拦截改动或收集验证证据的软件工具。
+Vibe Coding Rule 通过可复制的行为约束、判断规则和项目模板，约定 AI 与开发者在需求澄清、影响分析、实现、验证和交付中的协作方式。它属于规范与流程层，不是自动执行、拦截改动或收集证据的软件工具。
 
 **版本记录：** [`CHANGELOG.md`](./CHANGELOG.md)
 
@@ -20,13 +20,11 @@ Vibe Coding Rule 通过可复制的行为约束、判断规则、操作流程和
 | 正式新增需求 | [`新增需求工作流.md`](./新增需求工作流.md)（仅本规范仓教程，不接入业务项目） |
 | 正式变更需求 | [`需求变更工作流.md`](./需求变更工作流.md)（仅本规范仓教程，不接入业务项目） |
 
-只有用户明确指定新增需求、需求变更或已有需求的后续工作，才进入对应承接流程。用户未指定时，AI 按直接授权的任务处理，不自行分类、要求确认或启动 OpenSpec。进入新增需求流程后，目标、范围和验收口径确认，再由用户主动要求创建；AI 生成 `change-id` 并检查冲突，发现同名或可能承载该需求的现有 change 时停止，否则创建。需求变更或已有需求的后续工作仍须只读查找候选，并由用户确认继续原 change / 新建关联 change；新建关联 change 同样由创建请求授权 AI 生成 ID、检查冲突并创建。后续口径与验证结论回填同一 change，不另建平行口径；issue/PR 等只作输入来源。
+只有用户明确指定新增需求、需求变更或已有需求的后续工作，才进入 OpenSpec 承接流程；用户未指定时，AI 按直接授权的任务处理。确认后的口径与验证结论回填同一 change，issue/PR 等只作输入来源。
 
 ## 工具链
 
-接入本规范包后，**默认假定** OpenSpec 与 Serena **均已成功安装并完成当前项目和当前 AI 工具侧接入**。仅在当前任务已触发并确实需要某项工具时检查可用性，不在每个 Chat 开始时预检全部工具；职责与失败处理见 [`docs/规范/工具协作.md`](./docs/规范/工具协作.md)。
-
-三句话口径：假定已安装 → 执行中**需要使用**某项却不可用则中断并指明工具名 → 用文末「工具安装」提示词或官方文档修复，不静默降级、不擅自在接入流程里顺手安装。
+接入本规范包后，默认假定 OpenSpec 与 Serena 已安装并完成当前项目和当前 AI 工具侧接入。仅在当前任务确实需要某项工具时检查可用性；需要使用却不可用时中断并指明工具名，不静默降级、不擅自安装。职责、边界与失败处理以 [`AGENTS.md`](./AGENTS.md) 为准。
 
 官方来源（命令以当前文档为准）：
 
@@ -42,8 +40,7 @@ your-project/                         # 业务项目接入后的示意结构（�
 │   ├── README.md                     # 项目长期规范索引
 │   └── 规范/
 │       ├── 代码设计原则.md
-│       ├── 前后端工程级编码规范.md
-│       └── 工具协作.md               # OpenSpec / Serena；含 UI 两阶段重组
+│       └── 前后端工程级编码规范.md
 ├── design/
 │   └── README.md                     # UI、页面、交互和视觉资料说明
 ├── .agents/
@@ -51,9 +48,9 @@ your-project/                         # 业务项目接入后的示意结构（�
 └── openspec/                         # 由 OpenSpec 在业务项目中生成；本规范仓不含
 ```
 
-[`AGENTS.md`](./AGENTS.md) 承载每次 Chat 都需要知道的规则，用六条底线约束 AI，并负责需求授权判断、用户确认与 `docs/` 按需路由：**不伪造成功 · 完成前验证 · 改行为前先记录 · 不碰敏感信息 · 不擅自制造外部副作用 · 拿不准就问**。
+[`AGENTS.md`](./AGENTS.md) 承载每次 Chat 都需要知道的规则，用六条底线约束 AI，并负责需求授权判断、用户确认与 `docs/` 按需路由。
 
-项目长期知识与条件化流程放 `docs/`，由 [`docs/README.md`](./docs/README.md) 按需索引，不在每个 Chat 中全量读取；UI、页面、交互和视觉资料放 `design/`（见 [`design/README.md`](./design/README.md)）；项目 skill 放 `.agents/skills/`（见 [`.agents/README.md`](./.agents/README.md)）。只有用户明确确认的新增需求或需求变更才启用 OpenSpec，后续继续使用用户确认的同一 change（issue/PR 等仅作输入来源）。
+项目长期知识放 `docs/`，由 [`docs/README.md`](./docs/README.md) 按需索引；UI、页面、交互和视觉资料放 `design/`；项目 skill 放 `.agents/skills/`。
 
 ## 接入业务项目
 
