@@ -1,24 +1,26 @@
 # Vibe Coding Rule
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version: v4.0.1](https://img.shields.io/badge/Version-v4.0.1-blue)](./CHANGELOG.md)
+[![Version: v4.0.2](https://img.shields.io/badge/Version-v4.0.2-blue)](./CHANGELOG.md)
 [![GitHub](https://img.shields.io/badge/GitHub-maxlongint%2FVibe--Coding--Rule-blue?logo=github)](https://github.com/maxlongint/Vibe-Coding-Rule)
 
 **一套可搭配 OpenSpec 与 Serena 的 AI 协作规范。** 不绑定特定 AI 工具，前后端项目都能用。
 
 Vibe Coding Rule 通过可复制的行为约束、判断规则和项目模板，约定 AI 与开发者在需求澄清、影响分析、实现、验证和交付中的协作方式。它属于规范与流程层，不是自动执行、拦截改动或收集证据的软件工具。
 
+它兼容 `AGENTS.md` 生态中“给 coding agents 的项目说明书”这一定位，但不只提供提示词模板：本规范把需求载体、代码语义证据、敏感信息、外部状态和完成前验证都纳入同一套协作边界。适合希望 AI 能参与真实工程交付、同时又不伪造成功或越权改动的团队。
+
 **版本记录：** [`CHANGELOG.md`](./CHANGELOG.md)
 
 ## 日常协作
 
-| 你要做的事 | 看哪里 |
-| --- | --- |
-| 约束 AI 常驻行为、需求确认与知识路由 | [`AGENTS.md`](./AGENTS.md) |
-| 查技术栈、架构、编码约定 | [`docs/README.md`](./docs/README.md) 及其索引 |
-| 存放 UI、页面、交互和视觉资料 | [`design/README.md`](./design/README.md) |
-| 正式新增需求 | [`新增需求工作流.md`](./新增需求工作流.md)（仅本规范仓教程，不接入业务项目） |
-| 正式变更需求 | [`需求变更工作流.md`](./需求变更工作流.md)（仅本规范仓教程，不接入业务项目） |
+| 你要做的事                           | 看哪里                                                                       |
+| ------------------------------------ | ---------------------------------------------------------------------------- |
+| 约束 AI 常驻行为、需求确认与知识路由 | [`AGENTS.md`](./AGENTS.md)                                                   |
+| 查技术栈、架构、编码约定             | [`docs/README.md`](./docs/README.md) 及其索引                                |
+| 存放 UI、页面、交互和视觉资料        | [`design/README.md`](./design/README.md)                                     |
+| 正式新增需求                         | [`新增需求工作流.md`](./新增需求工作流.md)（仅本规范仓教程，不接入业务项目） |
+| 正式变更需求                         | [`需求变更工作流.md`](./需求变更工作流.md)（仅本规范仓教程，不接入业务项目） |
 
 只有用户明确指定新增需求、需求变更或已有需求的后续工作，才进入 OpenSpec 承接流程；用户未指定时，AI 按直接授权的任务处理。确认后的口径与验证结论回填同一 change，issue/PR 等只作输入来源。
 
@@ -61,11 +63,24 @@ your-project/                         # 业务项目接入后的示意结构（�
 
 项目长期知识放 `docs/`，由 [`docs/README.md`](./docs/README.md) 按需索引；UI、页面、交互和视觉资料放 `design/`；项目 skill 放 `.agents/skills/`。
 
+最小理解示例：
+
+```text
+AGENTS.md：每次 Chat 必须先知道的底线、权限、需求承接和知识路由。
+docs/README.md：长期项目知识的索引，只在任务需要时读取。
+OpenSpec change：用户确认后的新增需求或需求变更，只使用一个承接载体。
+Serena：涉及代码结构、符号、调用影响或语义编辑时使用的代码事实来源。
+
+交付说明：必须说明实际改变、验证证据、未验证项和剩余风险。
+```
+
 ## 接入业务项目
 
 本项目只提供一套完整接入方式：创建或更新 `AGENTS.md`，递归合并 `docs/` 下全部文件，处理 `design/README.md`，并创建或更新 `.agents/README.md`。不要拆成 Lite、单文件或部分工具接入。
 
 接入时应保留业务项目已有内容和索引，不删除项目自行新增的文件或目录。同路径规范文件应合并；`AGENTS.md` 或 `design/README.md` 不存在时创建，内容相同时保持不变，内容不同时展示差异摘要并暂停，由用户选择保留、覆盖或合并。不得修改或删除 `design/` 下其他文件。
+
+业务项目如已有必须每次 Chat 都知道的少量项目事实，可合并到 `AGENTS.md` 的项目事实区，例如技术栈、常用验证命令、源码与测试目录、禁止修改区域。事实必须来自用户确认或项目已有文件；没有明确来源时只提示待确认，不得编造。较长或条件化知识仍放入 `docs/` 并由索引按需读取。
 
 在业务项目中把下面的提示词发给 AI：
 
@@ -76,6 +91,7 @@ your-project/                         # 业务项目接入后的示意结构（�
 只处理受管文件：AGENTS.md、docs/ 下全部文件、design/README.md、.agents/README.md。保留项目自有内容与索引；不复制其他文件。
 本项目只接受完整接入，不拆成 Lite、单文件或部分工具接入。
 design/README.md：不存在则创建，相同跳过，不同则展示差异并由我选择；不得改 design/ 下其余文件。
+若 AGENTS.md 已有技术栈、常用命令、源码/测试目录、禁止修改区域等每次 Chat 必须知道的项目事实，保留并合并到项目事实区；没有明确来源时不要编造。
 本规范使用 OpenSpec 与 Serena 分别承载需求记录和代码语义证据；状态异常时中断并指明阻塞点，勿自动安装或静默降级。
 完成后列出实际更新、未更新项和剩余风险。
 ```

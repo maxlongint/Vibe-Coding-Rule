@@ -4,6 +4,13 @@
 
 ## [Unreleased]
 
+## [4.0.2] - 2026-08-04
+
+### Changed
+
+- `README.md`、`AGENTS.md`、`docs/README.md`：补充 AGENTS.md 生态定位、最小理解示例、业务项目事实区和授权式经验沉淀口径，强调常驻规则保持短而稳定。
+- `AGENTS.md`、`README.md`、`CHANGELOG.md`：版本标识更新为 v4.0.2。
+
 ## [4.0.1] - 2026-08-04
 
 ### Changed
@@ -275,7 +282,8 @@ v3.0.0 从接入范围移除并停止维护业务项目侧的下列文件（规�
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
-[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.1...HEAD
+[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.2...HEAD
+[4.0.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.1...v4.0.2
 [4.0.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v3.3.0...v4.0.0
 [3.3.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v3.2.3...v3.3.0
