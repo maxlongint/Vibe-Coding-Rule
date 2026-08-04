@@ -4,6 +4,26 @@
 
 ## [Unreleased]
 
+## [4.1.0] - 2026-08-04
+
+### Changed
+
+- `AGENTS.md`、`README.md`、`CONTRIBUTING.md`、`.agents/README.md`、`规则干条.md`、`新增需求工作流.md`、`需求变更工作流.md`、`.github/pull_request_template.md`：将当前工具路线从 OpenSpec + Serena 改回 OpenSpec + CodeGraph；CodeGraph 仅作为当前项目索引下的代码图谱证据来源，覆盖代码结构、符号关系、调用路径和影响范围，不替代 OpenSpec、源码、diff、测试或完成前验证。
+- `README.md`：按 CodeGraph 官方仓库来源更新工具准备提示词，要求安装、AI/MCP 接入和当前项目索引初始化，并在需要重启 AI 才能加载 MCP 时停止说明。
+- `AGENTS.md`、`README.md`、`CHANGELOG.md`：版本标识更新为 v4.1.0。
+
+### Migration
+
+从 v4.0.0 / v4.0.1 / v4.0.2 升级到本版本时，业务项目须同步更新受管文件 `AGENTS.md`、`docs/`、`design/README.md` 和 `.agents/README.md`。若业务项目中仍保留 Serena 作为项目规范默认依赖，应删除或改写为项目自有补充规则，不得与当前 OpenSpec + CodeGraph 口径并存。
+
+需要检查并处理：
+
+1. 删除或改写接入文档、安装提示词、项目规范和工作流文档中对 Serena 的默认依赖表述；
+2. 安装并接入 CodeGraph，完成当前 AI 工具侧 MCP 接入，以及当前项目所需的索引初始化；
+3. 将依赖代码结构、符号关系、引用、调用路径或影响范围的流程改为使用 CodeGraph 取证；
+4. 删除或忽略业务项目残留的 `.serena/` 本地工具状态目录，避免误提交旧工具配置；
+5. 确认 OpenSpec change 仍是进行中需求、范围、验收、设计、任务和变化记录的唯一载体。
+
 ## [4.0.2] - 2026-08-04
 
 ### Changed
@@ -282,7 +302,8 @@ v3.0.0 从接入范围移除并停止维护业务项目侧的下列文件（规�
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
-[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.2...HEAD
+[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.0...HEAD
+[4.1.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.2...v4.1.0
 [4.0.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.1...v4.0.2
 [4.0.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v3.3.0...v4.0.0
