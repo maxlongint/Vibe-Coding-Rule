@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [4.0.1] - 2026-08-04
+
 ### Changed
 
 - `AGENTS.md`、`README.md`、`CONTRIBUTING.md`、`规则干条.md`：将 OpenSpec + Serena 表述改为中性的职责分工，避免在接入规则中点名版本或声称工具默认已安装。
@@ -19,6 +21,7 @@
 - `新增需求工作流.md`、`需求变更工作流.md`：实现和验证提示词补充 Serena 项目上下文证据回填；阶段 1 输出改为说明本地验收命令，只有用户明确要求时才提供本地预览方式。
 - `需求变更工作流.md`：区分用户已提供 `change-id` 与未提供 `change-id` 的承接路径；明确变化记录默认追加到 `design.md`「变化记录」章节，已有专门位置时沿用并说明。
 - `.github/pull_request_template.md`：补充 v4 规范包核对项，覆盖受管范围、索引、Migration、旧工具残留、OpenSpec / Serena 边界和 UI 两阶段规则。
+- `AGENTS.md`、`README.md`、`CHANGELOG.md`：版本标识更新为 v4.0.1；v4 Migration 明确 v4.0.0 是破坏性升级，不提供 v3 兼容层，其他规则和教程只维护 v4 当前口径。
 
 ## [4.0.0] - 2026-08-02
 
@@ -32,6 +35,8 @@
 - `新增需求工作流.md`、`需求变更工作流.md`：移除 Superpowers `brainstorming` 方法调用，改为普通澄清流程；涉及既有代码结构、实现位置、影响范围、诊断或语义编辑时要求使用 Serena 取得代码事实证据。
 
 ### Migration
+
+v4.0.0 是破坏性升级，不提供 v3 兼容层。除本 `Migration` 说明升级影响和处理路径外，其他规则、接入文档和工作流教程均只按 v4 当前口径维护，不保留 v3 兼容说明或兼容分支。
 
 从 v3.x 升级到 v4.0.0 时，业务项目须同步更新受管文件 `AGENTS.md`、`docs/`、`design/README.md` 和 `.agents/README.md`。若业务项目中仍保留 CodeGraph 或 Superpowers 作为项目规范默认依赖，应删除或改写为项目自有补充规则，不得与 v4 的 OpenSpec + Serena 强制口径并存。
 
@@ -270,6 +275,8 @@ v3.0.0 从接入范围移除并停止维护业务项目侧的下列文件（规�
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
+[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.1...HEAD
+[4.0.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v3.3.0...v4.0.0
 [3.3.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v3.2.3...v3.3.0
 [3.2.3]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v3.2.2...v3.2.3

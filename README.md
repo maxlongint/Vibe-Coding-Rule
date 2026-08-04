@@ -1,7 +1,7 @@
 # Vibe Coding Rule
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version: v4.0.0](https://img.shields.io/badge/Version-v4.0.0-blue)](./CHANGELOG.md)
+[![Version: v4.0.1](https://img.shields.io/badge/Version-v4.0.1-blue)](./CHANGELOG.md)
 [![GitHub](https://img.shields.io/badge/GitHub-maxlongint%2FVibe--Coding--Rule-blue?logo=github)](https://github.com/maxlongint/Vibe-Coding-Rule)
 
 **一套可搭配 OpenSpec 与 Serena 的 AI 协作规范。** 不绑定特定 AI 工具，前后端项目都能用。
