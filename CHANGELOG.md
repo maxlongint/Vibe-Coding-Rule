@@ -4,6 +4,13 @@
 
 ## [Unreleased]
 
+## [4.1.1] - 2026-08-05
+
+### Changed
+
+- `AGENTS.md`、`README.md`、`docs/README.md`、`.agents/README.md`、`CONTRIBUTING.md`、`规则干条.md`：明确 AI 工具或个人环境默认安装的全局能力、内置 skill、Superpowers 目录及其附带文档，不构成本规范依赖，也不属于业务项目受管文件；除非用户明确要求并确认归属，不得复制、迁移或登记为项目文档。
+- `AGENTS.md`、`README.md`、`CHANGELOG.md`：版本标识更新为 v4.1.1。
+
 ## [4.1.0] - 2026-08-04
 
 ### Changed
@@ -302,7 +309,8 @@ v3.0.0 从接入范围移除并停止维护业务项目侧的下列文件（规�
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
-[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.0...HEAD
+[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.1...HEAD
+[4.1.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.2...v4.1.0
 [4.0.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.1...v4.0.2
 [4.0.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.0...v4.0.1
