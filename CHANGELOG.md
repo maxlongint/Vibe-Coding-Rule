@@ -4,6 +4,13 @@
 
 ## [Unreleased]
 
+## [4.1.2] - 2026-08-06
+
+### Changed
+
+- `AGENTS.md`：明确新增、迁移或调整导出接口、DTO、后端响应类型、公共类型和服务 API 等契约型类型时，必须保留已有接口说明与字段注释；来源缺失时不得凭字段名猜测业务含义，应按已确认来源补充或标注未确认边界。
+- `AGENTS.md`、`README.md`、`CHANGELOG.md`：版本标识更新为 v4.1.2。
+
 ## [4.1.1] - 2026-08-05
 
 ### Changed
@@ -309,7 +316,8 @@ v3.0.0 从接入范围移除并停止维护业务项目侧的下列文件（规�
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
-[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.1...HEAD
+[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.2...HEAD
+[4.1.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.1...v4.1.2
 [4.1.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.2...v4.1.0
 [4.0.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.1...v4.0.2
