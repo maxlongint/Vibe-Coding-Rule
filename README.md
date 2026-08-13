@@ -125,7 +125,9 @@ AI 工具或个人环境默认安装的全局 skill、内置能力、Superpowers
 **OpenSpec**（需 CLI + 当前项目初始化 + AI 侧接入）：
 
 ```text
-请按 https://github.com/Fission-AI/OpenSpec 当前官方说明，安装 OpenSpec CLI，在当前项目初始化，并接入我正在使用的 AI 工具。
+请按 https://github.com/Fission-AI/OpenSpec 当前官方说明，安装 OpenSpec CLI，在当前项目初始化，并优先使用官方共享 agents 接入方式，让 OpenSpec 生成的 skills 落到 .agents/skills/openspec-*，不要安装到单一 AI 工具私有目录（例如 .codex/skills/）。
+若官方当前版本不支持共享 agents 接入，立即说明阻塞点和可选方案，不要静默改用工具私有目录。
+安装后同步更新 .agents/README.md，将 .agents/skills/openspec-* 作为一组 OpenSpec 工具 skills 登记，注明来源为 OpenSpec CLI、用途为需求流程工具接入、更新以官方 CLI 为准；不要把它们拆成团队手写项目 skill 逐个维护。
 需要重启 AI 才能加载时说明原因后停止，由我重启；不要假装已可用。完成后说明验证方式。
 ```
 
