@@ -4,6 +4,13 @@
 
 ## [Unreleased]
 
+## [4.1.3] - 2026-08-17
+
+### Changed
+
+- `AGENTS.md`、`docs/README.md`：区分项目 Node.js 运行时/构建工具链与 OpenSpec、CodeGraph 等外部流程 CLI 的独立运行时要求，避免将外部工具的 Node.js 版本要求误判为项目版本要求。
+- `AGENTS.md`、`README.md`、`CHANGELOG.md`：版本标识更新为 v4.1.3。
+
 ## [4.1.2] - 2026-08-06
 
 ### Changed
@@ -316,7 +323,8 @@ v3.0.0 从接入范围移除并停止维护业务项目侧的下列文件（规�
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
-[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.2...HEAD
+[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.3...HEAD
+[4.1.3]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.2...v4.1.3
 [4.1.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.1...v4.1.2
 [4.1.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.0.2...v4.1.0
