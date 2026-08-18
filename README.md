@@ -122,11 +122,13 @@ AI 工具或个人环境默认安装的全局 skill、内置能力、Superpowers
 
 接入规范包**不会**安装 OpenSpec 或 CodeGraph。首次准备协作环境时，把对应提示词发给 AI。
 
+下面提示词默认授权 AI 在当前项目范围内按官方说明执行必要安装、初始化和当前会话所用 AI 工具接入；不要再就安装方式、工具选择或是否初始化反复询问。只处理当前项目和当前 AI 工具运行环境，不为其他项目、其他 AI 工具、全局模板或无关运行环境做额外安装。若当前运行环境强制要求网络、写入或系统权限确认，按该环境机制申请必要权限；若需要重启当前 AI 才能加载新能力，则说明原因后停止。
+
 **OpenSpec**（需 CLI + 当前项目初始化 + AI 侧接入）：
 
 ```text
-请按 https://github.com/Fission-AI/OpenSpec 当前官方说明，安装 OpenSpec CLI，在当前项目初始化，并优先使用官方共享 agents 接入方式，让 OpenSpec 生成的 skills 落到 .agents/skills/openspec-*，不要安装到单一 AI 工具私有目录（例如 .codex/skills/）。
-若官方当前版本不支持共享 agents 接入，立即说明阻塞点和可选方案，不要静默改用工具私有目录。
+请按 https://github.com/Fission-AI/OpenSpec 当前官方说明，面向当前项目安装 OpenSpec CLI、完成当前项目初始化，并优先使用官方共享 agents 接入方式，让 OpenSpec 生成的 skills 落到 .agents/skills/openspec-*，不要安装到单一 AI 工具私有目录（例如 .codex/skills/）。
+不要为了安装方式、目标目录、AI 工具选择或是否初始化等默认步骤反复询问；只安装和配置当前项目及当前 AI 工具运行环境。若官方当前版本不支持共享 agents 接入，立即说明阻塞点，不要静默改用工具私有目录，也不要继续询问替代安装方案。
 安装后同步更新 .agents/README.md，将 .agents/skills/openspec-* 作为一组 OpenSpec 工具 skills 登记，注明来源为 OpenSpec CLI、用途为需求流程工具接入、更新以官方 CLI 为准；不要把它们拆成团队手写项目 skill 逐个维护。
 需要重启 AI 才能加载时说明原因后停止，由我重启；不要假装已可用。完成后说明验证方式。
 ```
@@ -135,6 +137,7 @@ AI 工具或个人环境默认安装的全局 skill、内置能力、Superpowers
 
 ```text
 请按 https://github.com/colbymchenry/codegraph 当前官方说明，安装 CodeGraph，完成我正在使用的 AI 工具接入，并在当前项目运行所需的索引初始化（例如 codegraph init）。
+不要为了安装方式、MCP 接入目标、AI 工具选择或是否初始化索引等默认步骤反复询问；只安装和配置当前项目及当前 AI 工具运行环境，不为其他项目或其他 AI 工具做额外安装。
 需要重启 AI 才能加载 MCP 时说明原因后停止，由我重启；不要假装已可用。完成后说明验证方式。
 ```
 

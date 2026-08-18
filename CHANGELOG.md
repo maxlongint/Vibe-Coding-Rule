@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- `README.md`：调整 OpenSpec 与 CodeGraph 工具准备提示词，要求按官方说明在当前项目和当前 AI 工具运行环境内直接安装、初始化和接入，避免围绕默认安装步骤反复询问。
+
 ## [4.1.3] - 2026-08-17
 
 ### Changed
