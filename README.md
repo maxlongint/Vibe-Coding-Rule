@@ -1,7 +1,7 @@
 # Vibe Coding Rule
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Version: v4.1.3](https://img.shields.io/badge/Version-v4.1.3-blue)](./CHANGELOG.md)
+[![Version: v4.2.0](https://img.shields.io/badge/Version-v4.2.0-blue)](./CHANGELOG.md)
 [![GitHub](https://img.shields.io/badge/GitHub-maxlongint%2FVibe--Coding--Rule-blue?logo=github)](https://github.com/maxlongint/Vibe-Coding-Rule)
 
 **一套可搭配 OpenSpec 与 CodeGraph 的 AI 协作规范。** 不绑定特定 AI 工具，前后端项目都能用。
@@ -51,6 +51,7 @@ your-project/                         # 业务项目接入后的示意结构（�
 │   ├── README.md                     # 项目长期规范索引
 │   └── 规范/
 │       ├── 代码设计原则.md
+│       ├── 最小必要实现规范.md
 │       └── 前后端工程级编码规范.md
 ├── design/
 │   └── README.md                     # UI、页面、交互和视觉资料说明

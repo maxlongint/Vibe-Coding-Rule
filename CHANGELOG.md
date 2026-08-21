@@ -4,9 +4,18 @@
 
 ## [Unreleased]
 
+## [4.2.0] - 2026-08-21
+
+### Added
+
+- `docs/规范/最小必要实现规范.md`：新增最小必要实现阶梯，约束实现前优先判断是否需要做、复用已有能力、标准库、平台能力和已安装依赖，并明确不降低安全、接口、错误和验证边界。
+
 ### Changed
 
 - `README.md`：调整 OpenSpec 与 CodeGraph 工具准备提示词，要求按官方说明在当前项目和当前 AI 工具运行环境内直接安装、初始化和接入，避免围绕默认安装步骤反复询问。
+- `README.md`、`docs/README.md`：同步最小必要实现规范的受管文件示意和索引入口。
+- `需求变更工作流.md`：明确新建关联 change 为第 2 步内的条件动作，不另算主步骤。
+- `AGENTS.md`、`README.md`、`CHANGELOG.md`：版本标识更新为 v4.2.0。
 
 ## [4.1.3] - 2026-08-17
 
@@ -327,7 +336,8 @@ v3.0.0 从接入范围移除并停止维护业务项目侧的下列文件（规�
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
-[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.3...HEAD
+[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.2.0...HEAD
+[4.2.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.3...v4.2.0
 [4.1.3]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.2...v4.1.3
 [4.1.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.1...v4.1.2
 [4.1.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.0...v4.1.1
