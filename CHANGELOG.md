@@ -4,6 +4,13 @@
 
 ## [Unreleased]
 
+## [4.2.1] - 2026-09-02
+
+### Changed
+
+- `AGENTS.md`：明确“保持一致”“同步路径”“修正过期项目事实”不构成修改 `AGENTS.md` 的授权；即使目录移动、文件重命名或文档结构调整导致 `AGENTS.md` 内容变旧，也只能提示风险或请求用户明确授权后再改。
+- `AGENTS.md`、`README.md`、`CHANGELOG.md`：版本标识更新为 v4.2.1。
+
 ## [4.2.0] - 2026-08-21
 
 ### Added
@@ -336,7 +343,8 @@ v3.0.0 从接入范围移除并停止维护业务项目侧的下列文件（规�
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
-[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.2.0...HEAD
+[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.2.1...HEAD
+[4.2.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.2.0...v4.2.1
 [4.2.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.3...v4.2.0
 [4.1.3]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.2...v4.1.3
 [4.1.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.1...v4.1.2
