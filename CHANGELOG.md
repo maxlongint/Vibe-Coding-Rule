@@ -4,6 +4,13 @@
 
 ## [Unreleased]
 
+## [4.2.2] - 2026-09-07
+
+### Changed
+
+- `docs/规范/前后端工程级编码规范.md`：明确接口适配以本地目标结构和调用方实际使用字段为基准；API Response 只作为数据来源，未使用返回字段不纳入本次语义确认范围，也不反推需求或扩展本地类型。
+- `AGENTS.md`、`README.md`、`CHANGELOG.md`：版本标识更新为 v4.2.2。
+
 ## [4.2.1] - 2026-09-02
 
 ### Changed
@@ -343,7 +350,8 @@ v3.0.0 从接入范围移除并停止维护业务项目侧的下列文件（规�
 - `新需求开发.md`、`需求变更.md`：OpenSpec 主流程指南
 - `CONTRIBUTING.md`、`LICENSE`（MIT）
 
-[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.2.1...HEAD
+[Unreleased]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.2.2...HEAD
+[4.2.2]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.2.1...v4.2.2
 [4.2.1]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.2.0...v4.2.1
 [4.2.0]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.3...v4.2.0
 [4.1.3]: https://github.com/maxlongint/Vibe-Coding-Rule/compare/v4.1.2...v4.1.3

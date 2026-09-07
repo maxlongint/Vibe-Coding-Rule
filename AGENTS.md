@@ -1,6 +1,6 @@
 # AGENTS.md
 
-> Vibe Coding Rule 版本：v4.2.1
+> Vibe Coding Rule 版本：v4.2.2
 
 ## 速查：六条底线
 
